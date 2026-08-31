@@ -131,6 +131,7 @@ svg { image-rendering: pixelated; shape-rendering: crispEdges; }
 }
 .postit__v { font-family: "Galmuri14", "Galmuri11", monospace; font-size: 16px; text-align: right; }
 .postit__v small { font-size: 12px; color: var(--ucld-textMute); }
+.postit__v strong { font-weight: 700; }   /* 마감 시간 강조 */
 .postit__note { font-size: 12px; color: var(--ucld-textMute); text-align: center; margin-top: 14px; }
 
 /* ---------- 컨셉 / 스텝 ---------- */

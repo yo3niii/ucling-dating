@@ -92,7 +92,7 @@
         <ul class="postit__list">
           <li>
             <span class="postit__k">신청 마감</span>
-            <span class="postit__v">9/13 <small>(일) 낮 12시</small></span>
+            <span class="postit__v">9/13(일) <strong>밤 12시까지</strong></span>
           </li>
           <li>
             <span class="postit__k">클래스 진행</span>
@@ -208,14 +208,10 @@
             </fieldset>
 
             <!-- 활동 지역 -->
-            <fieldset class="field">
-              <legend class="label">활동 지역 <span class="req">*</span></legend>
-              <div class="choices choices--row">
-                <label class="chip"><input type="radio" name="활동지역" value="서울" /><span>서울</span></label>
-                <label class="chip"><input type="radio" name="활동지역" value="수원" /><span>수원</span></label>
-                <label class="chip"><input type="radio" name="활동지역" value="인천" /><span>인천</span></label>
-              </div>
-            </fieldset>
+            <div class="field">
+              <label class="label" for="region">활동 지역 <span class="req">*</span></label>
+              <input class="input" type="text" id="region" name="활동지역" placeholder="예: 서울 마포구 / 수원 영통구 / 인천 부평구" maxlength="30" required />
+            </div>
 
             <!-- 참가 금액대 -->
             <fieldset class="field">
