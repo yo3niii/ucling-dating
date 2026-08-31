@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>우클링 하루연애 — 하루 연프 참가자 되기</title>
-  <meta name="description" content="하루 연프 참가자 되기. 동네 원데이 클래스에서 3:3로 자연스럽게 만나는 우클링 하루연애. 지금 신청하세요." />
+  <title>우클링 하루연애 — 소개팅은 망해도 머그컵은 남는다</title>
+  <meta name="description" content="소개팅은 망해도 머그컵은 남는다. 동네 원데이 클래스에서 3:3로 자연스럽게 만나는 우클링 하루연애. 지금 신청하세요." />
 
   <!-- 파비콘 (brand/DESIGN-SYSTEM.md §5) -->
   <link rel="icon" href="brand/png/favicon/favicon.ico" sizes="any" />
@@ -12,7 +12,7 @@
   <link rel="apple-touch-icon" href="brand/png/app-icon/app-icon-180.png" />
 
   <!-- OG (인스타/메타 공유용) -->
-  <meta property="og:title" content="우클링 하루연애 — 하루 연프 참가자 되기" />
+  <meta property="og:title" content="우클링 하루연애 — 소개팅은 망해도 머그컵은 남는다" />
   <meta property="og:description" content="동네 원데이 클래스에서 3:3로 자연스럽게. 지금 신청하세요." />
   <meta property="og:image" content="brand/png/profile/profile-512.png" />
   <meta property="og:type" content="website" />
@@ -72,7 +72,7 @@
 
       <img class="hero__symbol" src="brand/svg/symbol-twotone.svg" alt="우클링" width="44" height="45" />
       <p class="hero__round" id="roundBadge">우클링 하루연애 신청</p>
-      <h1 class="hero__title">하루 연프<br />참가자 되기</h1>
+      <h1 class="hero__title">소개팅은 망해도<br />머그컵은 남는다</h1>
       <p class="hero__sub">
         연애 프로그램에 나가보고 싶던 마음,<br />
         동네 원데이 클래스에서 가볍게.
@@ -92,11 +92,19 @@
         <ul class="postit__list">
           <li>
             <span class="postit__k">신청 마감</span>
-            <span class="postit__v">9/13 <small>(토)</small></span>
+            <span class="postit__v">9/13 <small>(일) 낮 12시</small></span>
           </li>
           <li>
             <span class="postit__k">클래스 진행</span>
-            <span class="postit__v">9/20~9/21 <small>(토·일)</small></span>
+            <span class="postit__v">9/18~9/20 <small>(금·토·일)</small></span>
+          </li>
+          <li>
+            <span class="postit__k">장소</span>
+            <span class="postit__v">서울 어딘가 <small>(매칭 시 연락)</small></span>
+          </li>
+          <li>
+            <span class="postit__k">모집 인원</span>
+            <span class="postit__v">선착순 모집</span>
           </li>
         </ul>
         <p class="postit__note">매칭 결과는 마감 후 연락처로 안내해요</p>
@@ -190,29 +198,48 @@
             <!-- 관심 클래스 결 -->
             <fieldset class="field">
               <legend class="label">관심 클래스 결 <span class="req">*</span></legend>
+              <p class="hint">복수 선택할 수 있어요.</p>
               <div class="choices">
-                <label class="opt"><input type="radio" name="관심클래스" value="조용히 몰입" required /><span>🕯 조용히 몰입 <em>향·도자기·그림 같은 차분한 것</em></span></label>
-                <label class="opt"><input type="radio" name="관심클래스" value="함께 만들며 수다" /><span>🍳 함께 만들며 수다 <em>쿠킹·베이킹처럼 자연스럽게 대화되는 것</em></span></label>
-                <label class="opt"><input type="radio" name="관심클래스" value="활발하게 몸으로" /><span>🏸 활발하게 몸으로 <em>배드민턴·클라이밍·볼링 등</em></span></label>
-                <label class="opt"><input type="radio" name="관심클래스" value="감성·예술" /><span>🎨 감성·예술 <em>플라워·캔들·드로잉 등 예쁜 결과물</em></span></label>
-                <label class="opt"><input type="radio" name="관심클래스" value="뭐든 좋아요" /><span>🎲 뭐든 좋아요 <em>추천받을래요</em></span></label>
+                <label class="opt"><input type="checkbox" name="관심클래스" value="조용히 몰입" /><span>🕯 조용히 몰입 <em>향·캔들·도자기·드로잉·플라워 같은 차분하고 예쁜 것</em></span></label>
+                <label class="opt"><input type="checkbox" name="관심클래스" value="함께 만들며 수다" /><span>🍳 함께 만들며 수다 <em>쿠킹·베이킹처럼 자연스럽게 대화되는 것</em></span></label>
+                <label class="opt"><input type="checkbox" name="관심클래스" value="활발하게 몸으로" /><span>🏸 활발하게 몸으로 <em>배드민턴·클라이밍·볼링 등</em></span></label>
+                <label class="opt"><input type="checkbox" name="관심클래스" value="운명에 맡겨요" /><span>🎲 운명에 맡겨요 <em>어떤 결이든 좋아요</em></span></label>
               </div>
             </fieldset>
 
             <!-- 활동 지역 -->
-            <div class="field">
-              <label class="label" for="region">활동 지역 (구 단위) <span class="req">*</span></label>
-              <input class="input" type="text" id="region" name="활동지역" placeholder="예: 마포구" maxlength="20" required />
-            </div>
+            <fieldset class="field">
+              <legend class="label">활동 지역 <span class="req">*</span></legend>
+              <div class="choices choices--row">
+                <label class="chip"><input type="radio" name="활동지역" value="서울" /><span>서울</span></label>
+                <label class="chip"><input type="radio" name="활동지역" value="수원" /><span>수원</span></label>
+                <label class="chip"><input type="radio" name="활동지역" value="인천" /><span>인천</span></label>
+              </div>
+            </fieldset>
+
+            <!-- 참가 금액대 -->
+            <fieldset class="field">
+              <legend class="label">참가 가능 금액대 <span class="req">*</span></legend>
+              <p class="hint">클래스 참가비 기준이에요. 이 범위 안에서 클래스를 골라요.</p>
+              <div class="choices choices--row">
+                <label class="chip"><input type="radio" name="예산" value="3만원까지" /><span>3만원까지</span></label>
+                <label class="chip"><input type="radio" name="예산" value="5만원까지" /><span>5만원까지</span></label>
+                <label class="chip"><input type="radio" name="예산" value="7만원까지" /><span>7만원까지</span></label>
+                <label class="chip"><input type="radio" name="예산" value="상관없음" /><span>상관없음</span></label>
+              </div>
+            </fieldset>
 
             <!-- 가능한 시간대 -->
             <fieldset class="field">
               <legend class="label">가능한 시간대 <span class="req">*</span></legend>
-              <p class="hint">복수 선택할 수 있어요. 분포를 보고 일정을 잡아요.</p>
+              <p class="hint">복수 선택할 수 있어요. 금 9/18 · 토 9/19 · 일 9/20 중 가능한 때.</p>
               <div class="choices choices--row">
-                <label class="chip"><input type="checkbox" name="시간대" value="평일 저녁" /><span>평일 저녁</span></label>
-                <label class="chip"><input type="checkbox" name="시간대" value="주말 점심" /><span>주말 점심</span></label>
-                <label class="chip"><input type="checkbox" name="시간대" value="주말 저녁" /><span>주말 저녁</span></label>
+                <label class="chip"><input type="checkbox" name="시간대" value="금(9/18) 낮" /><span>금 낮</span></label>
+                <label class="chip"><input type="checkbox" name="시간대" value="금(9/18) 저녁" /><span>금 저녁</span></label>
+                <label class="chip"><input type="checkbox" name="시간대" value="토(9/19) 낮" /><span>토 낮</span></label>
+                <label class="chip"><input type="checkbox" name="시간대" value="토(9/19) 저녁" /><span>토 저녁</span></label>
+                <label class="chip"><input type="checkbox" name="시간대" value="일(9/20) 낮" /><span>일 낮</span></label>
+                <label class="chip"><input type="checkbox" name="시간대" value="일(9/20) 저녁" /><span>일 저녁</span></label>
               </div>
             </fieldset>
 
@@ -242,7 +269,7 @@
                 우클링 하루연애는 소개팅 매칭 및 참가 안내를 위해 아래와 같이 개인정보를 수집·이용합니다.
               </p>
               <ul class="consent__list">
-                <li><b>수집 항목</b> — 닉네임, 나이대, 성별, MBTI, 관심 클래스, 활동 지역, 가능한 시간대, 원하는 상대 유형, 연락처, 인스타 아이디</li>
+                <li><b>수집 항목</b> — 닉네임, 나이대, 성별, MBTI, 관심 클래스, 활동 지역, 참가 금액대, 가능한 시간대, 원하는 상대 유형, 연락처, 인스타 아이디</li>
                 <li><b>수집·이용 목적</b> — 참가자 매칭, 소개팅 진행 안내, 결과(사랑의 작대기) 연결</li>
                 <li><b>보유·이용 기간</b> — 이벤트 종료 후 3개월 내 파기</li>
                 <li>동의를 거부할 수 있으나, 이 경우 매칭 진행이 불가합니다.</li>
@@ -286,7 +313,7 @@
 
   <!-- ===== 푸터 ===== -->
   <footer class="footer">
-    <p class="footer__brand">우클링 — 동네에서 만나는 원데이 클래스</p>
+    <p class="footer__brand">우클링 — 우리들의 클래스 링크//</p>
     <p class="footer__mute">© 우클링 하루연애</p>
   </footer>
 

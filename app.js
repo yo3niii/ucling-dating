@@ -74,25 +74,32 @@ function clearError() {
 }
 
 function collect() {
-  // 시간대: 복수 선택 → 문자열로 합침
+  // 복수 선택 항목 → 문자열로 합침
   const times = Array.from(
     form.querySelectorAll('input[name="시간대"]:checked')
   ).map((el) => el.value);
+  const classes = Array.from(
+    form.querySelectorAll('input[name="관심클래스"]:checked')
+  ).map((el) => el.value);
+
+  const pick = (name) =>
+    (form.querySelector(`input[name="${name}"]:checked`) || {}).value || "";
 
   return {
     닉네임: form.nickname.value.trim(),
     나이: form.age.value.trim(),
-    성별: (form.querySelector('input[name="성별"]:checked') || {}).value || "",
+    성별: pick("성별"),
     MBTI: form.mbti.value,
-    관심클래스:
-      (form.querySelector('input[name="관심클래스"]:checked') || {}).value || "",
-    활동지역: form.region.value.trim(),
+    관심클래스: classes.join(", "),
+    활동지역: pick("활동지역"),
+    예산: pick("예산"),
     시간대: times.join(", "),
     원하는상대: form.wish.value.trim(),
     연락처: form.contact.value.trim(),
     인스타: form.insta.value.trim(),
     개인정보동의: form.agree.checked ? "동의" : "",
-    _시간대개수: times.length, // 검증용 (전송에는 무의미하지만 남겨도 무방)
+    _시간대개수: times.length, // 검증용 (전송 전 제거)
+    _관심개수: classes.length, // 검증용 (전송 전 제거)
   };
 }
 
@@ -102,8 +109,9 @@ function validate(d) {
   if (Number(d.나이) < 18) return "만 18세 이상만 신청할 수 있어요.";
   if (!d.성별) return "성별을 선택해주세요.";
   if (!d.MBTI) return "MBTI를 선택해주세요.";
-  if (!d.관심클래스) return "관심 클래스 결을 선택해주세요.";
-  if (!d.활동지역) return "활동 지역을 입력해주세요.";
+  if (d._관심개수 === 0) return "관심 클래스 결을 하나 이상 선택해주세요.";
+  if (!d.활동지역) return "활동 지역을 선택해주세요.";
+  if (!d.예산) return "참가 가능 금액대를 선택해주세요.";
   if (d._시간대개수 === 0) return "가능한 시간대를 하나 이상 선택해주세요.";
   if (!d.연락처) return "연락처를 입력해주세요.";
   if (!d.개인정보동의) return "개인정보 수집·이용에 동의해주세요. (필수)";
@@ -126,6 +134,7 @@ form.addEventListener("submit", async (e) => {
   }
 
   delete data._시간대개수; // 전송 데이터에서 검증용 필드 제거
+  delete data._관심개수;
 
   submitBtn.disabled = true;
   submitBtn.textContent = "보내는 중…";
