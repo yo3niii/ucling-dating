@@ -1,0 +1,34 @@
+/* 우클링 소개팅 — 디자인 토큰
+   출처: profile_dating_v2 / 09_twotone-on-blush */
+:root {
+  /* 팔레트 */
+  --ucld-rose: #e0356b;
+  --ucld-rose-deep: #b82a58;
+  --ucld-rose-soft: #f591ad;
+  --ucld-pink: #ff4d85;
+  --ucld-pink-soft: #ff9ec4;
+  --ucld-blush: #ffedf2;
+  --ucld-blush-deep: #ffdce8;
+  --ucld-cream: #fff7f9;
+  --ucld-white: #ffffff;
+  --ucld-plum: #2b1b24;
+  --ucld-plum-mute: #7a6570;
+
+  /* 역할 */
+  --ucld-primary: var(--ucld-rose); /* 브랜드 주색. U 스트로크, 주요 버튼, 활성 상태 */
+  --ucld-primaryDeep: var(--ucld-rose-deep); /* primary의 hover/pressed */
+  --ucld-primarySoft: var(--ucld-rose-soft); /* primary의 여린 단계. 비활성·보조 강조 */
+  --ucld-accent: var(--ucld-pink); /* 포인트색. 하트, 좋아요·매칭 등 감정 액션 1곳 */
+  --ucld-accentSoft: var(--ucld-pink-soft); /* accent의 여린 단계. 칩·태그 배경 텍스트 */
+  --ucld-bg: var(--ucld-blush); /* 앱/페이지 배경 */
+  --ucld-bgDeep: var(--ucld-blush-deep); /* 구분되는 섹션 배경, 카드 위 카드 */
+  --ucld-surface: var(--ucld-cream); /* 카드·시트 표면 */
+  --ucld-surfacePlain: var(--ucld-white); /* 입력 필드 등 순백이 필요한 표면 */
+  --ucld-text: var(--ucld-plum); /* 본문 텍스트 */
+  --ucld-textMute: var(--ucld-plum-mute); /* 보조 텍스트, 캡션 */
+
+  /* 로고 */
+  --ucld-logo-u: var(--ucld-rose);
+  --ucld-logo-heart: var(--ucld-pink);
+  --ucld-logo-bg: var(--ucld-blush);
+}
