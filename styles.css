@@ -205,7 +205,7 @@ svg { image-rendering: pixelated; shape-rendering: crispEdges; }
   border-radius: 0;
   padding: 12px 13px;
 }
-.input::placeholder { color: var(--ucld-textMute); }
+.input::placeholder { color: var(--ucld-textMute); opacity: 0.5; }
 .input:focus {
   outline: none;
   box-shadow: var(--px-shadow-sm);
