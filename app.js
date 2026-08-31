@@ -9,7 +9,8 @@ const CONFIG = {
   // Web3Forms 액세스 키. 대시보드에서 발급받아 넣는다. (공개돼도 되는 값)
   WEB3FORMS_KEY: "90e5c40b-58b7-4049-a370-97a65890beba",
 
-  // 메타 픽셀 ID (숫자). index.html 의 base 코드와 함께 동작한다.
+  // 메타 픽셀 ID (참조용). 실제 init/PageView 는 index.html <head> 에서 이 ID 로 실행된다.
+  // 변경 시 <head> 의 fbq('init') 값과 <noscript> 를 함께 바꿀 것.
   PIXEL_ID: "1087820957038013",
 
   // 현재 모집 회차. 회차가 바뀌면 이 숫자만 바꾼다.
@@ -22,16 +23,8 @@ const CONFIG = {
 
 const ROUND_LABEL = `${CONFIG.ROUND}회차`; // 예: "1회차"
 
-/* ---------- 메타 픽셀 초기화 + PageView ---------- */
-(function initPixel() {
-  if (typeof fbq !== "function") return;
-  if (!CONFIG.PIXEL_ID || CONFIG.PIXEL_ID === "YOUR_PIXEL_ID") {
-    console.warn("[픽셀] PIXEL_ID 가 설정되지 않아 추적을 건너뜁니다.");
-    return;
-  }
-  fbq("init", CONFIG.PIXEL_ID);
-  fbq("track", "PageView");
-})();
+/* 메타 픽셀 init + PageView 는 index.html <head> 에 인라인으로 있다 (표준 설치).
+   여기서는 신청 성공 시 Lead 만 쏜다. 픽셀 ID 변경은 <head> 의 fbq('init') 값을 수정. */
 
 /* ---------- 회차 텍스트 반영 ---------- */
 document.getElementById("roundBadge").textContent =
@@ -141,7 +134,7 @@ form.addEventListener("submit", async (e) => {
     await submitApplication(data);
 
     // 성공한 순간에만 Lead 발사 (전환 추적의 핵심)
-    if (typeof fbq === "function" && CONFIG.PIXEL_ID !== "YOUR_PIXEL_ID") {
+    if (typeof fbq === "function") {
       fbq("track", "Lead");
     }
 
