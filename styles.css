@@ -236,6 +236,21 @@ textarea.input { resize: vertical; min-height: 76px; line-height: 1.6; }
 }
 .chip input:focus-visible + span { outline: 2px dashed var(--ucld-primary); outline-offset: 2px; }
 
+/* 시간대: 요일(날짜)별 블럭 (은은하게 구분) */
+.timeblocks { display: flex; flex-direction: column; gap: 10px; }
+.timeblock {
+  display: flex; align-items: center; gap: 12px;
+  background: var(--ucld-bg);              /* 카드(cream) 위 blush 블럭 = 은은한 구분 */
+  border: 2px solid var(--ucld-blush-deep);
+  padding: 10px 12px;
+}
+.timeblock__day {
+  flex: 0 0 auto; min-width: 52px;
+  font-size: 14px; font-weight: 700; color: var(--ucld-text);
+}
+.timeblock__day small { font-size: 11px; font-weight: 400; color: var(--ucld-textMute); margin-left: 3px; }
+.timeblock .choices { flex: 1; }
+
 /* 라디오 옵션 (관심 클래스) */
 .opt { position: relative; display: block; }
 .opt input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }

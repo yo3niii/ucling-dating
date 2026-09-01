@@ -126,14 +126,14 @@
           <span class="step__num">2</span>
           <div>
             <h3 class="step__head">3:3으로 매칭돼요</h3>
-            <p class="step__body">취향이 맞는 사람들끼리 손으로 정성껏 매칭해요.</p>
+            <p class="step__body">취향이 맞는 사람들끼리 매칭해드려요.</p>
           </div>
         </li>
         <li class="step">
           <span class="step__num">3</span>
           <div>
             <h3 class="step__head">원데이 클래스에서 만나요</h3>
-            <p class="step__body">향 만들기, 쿠킹, 드로잉… 함께 만들며 자연스럽게.</p>
+            <p class="step__body">향수 만들기, 쿠킹, 도자기 함께 경험하며 알아가요.</p>
           </div>
         </li>
         <li class="step">
@@ -228,16 +228,37 @@
             <!-- 가능한 시간대 -->
             <fieldset class="field">
               <legend class="label">가능한 시간대 <span class="req">*</span></legend>
-              <p class="hint">복수 선택할 수 있어요. 금 9/18 · 토 9/19 · 일 9/20 중 가능한 때.</p>
-              <div class="choices choices--row">
-                <label class="chip"><input type="checkbox" name="시간대" value="금(9/18) 낮" /><span>금 낮</span></label>
-                <label class="chip"><input type="checkbox" name="시간대" value="금(9/18) 저녁" /><span>금 저녁</span></label>
-                <label class="chip"><input type="checkbox" name="시간대" value="토(9/19) 낮" /><span>토 낮</span></label>
-                <label class="chip"><input type="checkbox" name="시간대" value="토(9/19) 저녁" /><span>토 저녁</span></label>
-                <label class="chip"><input type="checkbox" name="시간대" value="일(9/20) 낮" /><span>일 낮</span></label>
-                <label class="chip"><input type="checkbox" name="시간대" value="일(9/20) 저녁" /><span>일 저녁</span></label>
+              <p class="hint">복수 선택할 수 있어요. 가능한 요일·시간을 모두 골라주세요.</p>
+              <div class="timeblocks">
+                <div class="timeblock">
+                  <span class="timeblock__day">금 <small>9/18</small></span>
+                  <div class="choices choices--row">
+                    <label class="chip"><input type="checkbox" name="시간대" value="금(9/18) 낮" /><span>낮</span></label>
+                    <label class="chip"><input type="checkbox" name="시간대" value="금(9/18) 저녁" /><span>저녁</span></label>
+                  </div>
+                </div>
+                <div class="timeblock">
+                  <span class="timeblock__day">토 <small>9/19</small></span>
+                  <div class="choices choices--row">
+                    <label class="chip"><input type="checkbox" name="시간대" value="토(9/19) 낮" /><span>낮</span></label>
+                    <label class="chip"><input type="checkbox" name="시간대" value="토(9/19) 저녁" /><span>저녁</span></label>
+                  </div>
+                </div>
+                <div class="timeblock">
+                  <span class="timeblock__day">일 <small>9/20</small></span>
+                  <div class="choices choices--row">
+                    <label class="chip"><input type="checkbox" name="시간대" value="일(9/20) 낮" /><span>낮</span></label>
+                    <label class="chip"><input type="checkbox" name="시간대" value="일(9/20) 저녁" /><span>저녁</span></label>
+                  </div>
+                </div>
               </div>
             </fieldset>
+
+            <!-- 내 취향 -->
+            <div class="field">
+              <label class="label" for="myTaste">제 취향은 이래요 <span class="req">*</span></label>
+              <textarea class="input" id="myTaste" name="내취향" rows="3" maxlength="300" placeholder="노래, 영화, 그 외 자신의 취향도 적어주세요." required></textarea>
+            </div>
 
             <!-- 원하는 상대 -->
             <div class="field">
@@ -265,7 +286,7 @@
                 우클링 하루연애는 소개팅 매칭 및 참가 안내를 위해 아래와 같이 개인정보를 수집·이용합니다.
               </p>
               <ul class="consent__list">
-                <li><b>수집 항목</b> — 닉네임, 나이대, 성별, MBTI, 관심 클래스, 활동 지역, 참가 금액대, 가능한 시간대, 원하는 상대 유형, 연락처, 인스타 아이디</li>
+                <li><b>수집 항목</b> — 닉네임, 나이대, 성별, MBTI, 관심 클래스, 활동 지역, 참가 금액대, 가능한 시간대, 본인 취향, 원하는 상대 유형, 연락처, 인스타 아이디</li>
                 <li><b>수집·이용 목적</b> — 참가자 매칭, 소개팅 진행 안내, 결과(사랑의 작대기) 연결</li>
                 <li><b>보유·이용 기간</b> — 이벤트 종료 후 3개월 내 파기</li>
                 <li>동의를 거부할 수 있으나, 이 경우 매칭 진행이 불가합니다.</li>

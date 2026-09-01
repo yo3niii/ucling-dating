@@ -94,6 +94,7 @@ function collect() {
     활동지역: form.region.value.trim(),
     예산: pick("예산"),
     시간대: times.join(", "),
+    내취향: form.myTaste.value.trim(),
     원하는상대: form.wish.value.trim(),
     연락처: form.contact.value.trim(),
     인스타: form.insta.value.trim(),
@@ -113,6 +114,7 @@ function validate(d) {
   if (!d.활동지역) return "활동 지역을 입력해주세요.";
   if (!d.예산) return "참가 가능 금액대를 선택해주세요.";
   if (d._시간대개수 === 0) return "가능한 시간대를 하나 이상 선택해주세요.";
+  if (!d.내취향) return "제 취향은 이래요 칸을 채워주세요.";
   if (!d.연락처) return "연락처를 입력해주세요.";
   if (!d.개인정보동의) return "개인정보 수집·이용에 동의해주세요. (필수)";
   return null;
