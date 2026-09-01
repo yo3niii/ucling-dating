@@ -110,7 +110,7 @@ function validate(d) {
   if (Number(d.나이) < 18) return "만 18세 이상만 신청할 수 있어요.";
   if (!d.성별) return "성별을 선택해주세요.";
   if (!d.MBTI) return "MBTI를 선택해주세요.";
-  if (d._관심개수 === 0) return "관심 클래스 결을 하나 이상 선택해주세요.";
+  if (d._관심개수 === 0) return "관심 클래스 취향을 하나 이상 선택해주세요.";
   if (!d.활동지역) return "활동 지역을 입력해주세요.";
   if (!d.예산) return "참가 가능 금액대를 선택해주세요.";
   if (d._시간대개수 === 0) return "가능한 시간대를 하나 이상 선택해주세요.";
