@@ -95,6 +95,10 @@
             <span class="postit__v">9/13(일) <strong>밤 12시까지</strong></span>
           </li>
           <li>
+            <span class="postit__k">매칭 안내</span>
+            <span class="postit__v">9/15</span>
+          </li>
+          <li>
             <span class="postit__k">클래스 진행</span>
             <span class="postit__v">9/18~9/20 <small>(금·토·일)</small></span>
           </li>
@@ -107,7 +111,7 @@
             <span class="postit__v">선착순 모집</span>
           </li>
         </ul>
-        <p class="postit__note">매칭 결과는 마감 후 연락처로 안내해요</p>
+        <p class="postit__note">매칭 결과는 마감 후 DM으로 안내해요</p>
       </div>
     </section>
 
@@ -133,7 +137,7 @@
           <span class="step__num">3</span>
           <div>
             <h3 class="step__head">원데이 클래스에서 만나요</h3>
-            <p class="step__body">향수 만들기, 쿠킹, 도자기 함께 경험하며 알아가요.</p>
+            <p class="step__body">향수 만들기, 쿠킹, 도자기 클래스··· 함께 경험하며 알아가요.</p>
           </div>
         </li>
         <li class="step">
@@ -228,36 +232,21 @@
             <!-- 가능한 시간대 -->
             <fieldset class="field">
               <legend class="label">가능한 시간대 <span class="req">*</span></legend>
-              <p class="hint">복수 선택할 수 있어요. 가능한 요일·시간을 모두 골라주세요.</p>
-              <div class="timeblocks">
-                <div class="timeblock">
-                  <span class="timeblock__day">금 <small>9/18</small></span>
-                  <div class="choices choices--row">
-                    <label class="chip"><input type="checkbox" name="시간대" value="금(9/18) 낮" /><span>낮</span></label>
-                    <label class="chip"><input type="checkbox" name="시간대" value="금(9/18) 저녁" /><span>저녁</span></label>
-                  </div>
-                </div>
-                <div class="timeblock">
-                  <span class="timeblock__day">토 <small>9/19</small></span>
-                  <div class="choices choices--row">
-                    <label class="chip"><input type="checkbox" name="시간대" value="토(9/19) 낮" /><span>낮</span></label>
-                    <label class="chip"><input type="checkbox" name="시간대" value="토(9/19) 저녁" /><span>저녁</span></label>
-                  </div>
-                </div>
-                <div class="timeblock">
-                  <span class="timeblock__day">일 <small>9/20</small></span>
-                  <div class="choices choices--row">
-                    <label class="chip"><input type="checkbox" name="시간대" value="일(9/20) 낮" /><span>낮</span></label>
-                    <label class="chip"><input type="checkbox" name="시간대" value="일(9/20) 저녁" /><span>저녁</span></label>
-                  </div>
-                </div>
+              <p class="hint">복수 선택할 수 있어요. <mark class="hl">금 9/18</mark> <mark class="hl">토 9/19</mark> <mark class="hl">일 9/20</mark> 중 가능한 때를 골라주세요.</p>
+              <div class="choices choices--row">
+                <label class="chip"><input type="checkbox" name="시간대" value="금(9/18) 낮" /><span>금 낮</span></label>
+                <label class="chip"><input type="checkbox" name="시간대" value="금(9/18) 저녁" /><span>금 저녁</span></label>
+                <label class="chip"><input type="checkbox" name="시간대" value="토(9/19) 낮" /><span>토 낮</span></label>
+                <label class="chip"><input type="checkbox" name="시간대" value="토(9/19) 저녁" /><span>토 저녁</span></label>
+                <label class="chip"><input type="checkbox" name="시간대" value="일(9/20) 낮" /><span>일 낮</span></label>
+                <label class="chip"><input type="checkbox" name="시간대" value="일(9/20) 저녁" /><span>일 저녁</span></label>
               </div>
             </fieldset>
 
             <!-- 내 취향 -->
             <div class="field">
               <label class="label" for="myTaste">제 취향은 이래요 <span class="req">*</span></label>
-              <textarea class="input" id="myTaste" name="내취향" rows="3" maxlength="300" placeholder="노래, 영화, 그 외 자신의 취향도 적어주세요." required></textarea>
+              <textarea class="input" id="myTaste" name="내취향" rows="3" maxlength="300" placeholder="좋아하는 노래·영화부터 그 밖의 취향까지, 편하게 적어주세요." required></textarea>
             </div>
 
             <!-- 원하는 상대 -->
@@ -275,8 +264,9 @@
 
             <!-- 인스타 -->
             <div class="field">
-              <label class="label" for="insta">인스타 아이디</label>
-              <input class="input" type="text" id="insta" name="인스타" placeholder="@아이디 (공개 계정만, 선택)" maxlength="40" autocomplete="off" />
+              <label class="label" for="insta">인스타 아이디 <span class="req">*</span></label>
+              <input class="input" type="text" id="insta" name="인스타" placeholder="@아이디" maxlength="40" autocomplete="off" required />
+              <p class="hint">이 계정으로 연락드려요. 비공개 계정이면 DM 요청 시 꼭 수락해주세요.</p>
             </div>
 
             <!-- 개인정보 동의 -->
@@ -330,7 +320,8 @@
 
   <!-- ===== 푸터 ===== -->
   <footer class="footer">
-    <p class="footer__brand">우클링 — 우리들의 클래스 링크//</p>
+    <p class="footer__brand">우클링 — 우리들의 클래스 링크</p>
+    <p class="footer__mail"><a href="mailto:ucling.official@gmail.com">ucling.official@gmail.com</a></p>
     <p class="footer__mute">© 우클링 하루연애</p>
   </footer>
 
