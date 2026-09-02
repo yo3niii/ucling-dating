@@ -46,6 +46,12 @@
   }
   .card svg { image-rendering: pixelated; shape-rendering: crispEdges; }
   .card__logo { position: absolute; top: 60px; right: 64px; height: 40px; width: auto; }
+  /* 캐러셀 페이지 번호 (오른쪽 아래) */
+  .page-num {
+    position: absolute; right: 64px; bottom: 44px;
+    font-family: "Galmuri11"; font-size: 24px; font-weight: 400;
+    color: var(--plum-mute); opacity: 0.45;
+  }
 
   .eyebrow { font-size: 34px; font-weight: 700; color: var(--rose); }
   .title   { font-family: "Galmuri14","Galmuri11"; font-size: 64px; font-weight: 400; line-height: 1.4; }
@@ -64,6 +70,7 @@
 
   /* CTA 픽셀 버튼 */
   .cta {
+    position: relative;
     align-self: flex-start;
     background: var(--rose); color: var(--white);
     font-family: "Galmuri11"; font-weight: 700; font-size: 40px;
@@ -71,6 +78,14 @@
     border: var(--px-line) solid var(--plum);
     box-shadow: var(--px-shadow);
     margin-top: 44px;
+  }
+  /* 클릭하는 픽셀 손가락 커서 (블록 오른쪽 아래 대각선) */
+  .cta-cursor {
+    position: absolute;
+    right: -26px; bottom: -40px;
+    width: 66px; height: auto;
+    transform: rotate(-18deg);
+    image-rendering: pixelated;
   }
 
   /* 픽셀 하트/별 심볼 */
@@ -212,6 +227,20 @@
   <symbol id="pxstar" viewBox="0 0 5 5">
     <rect x="2" y="0" width="1" height="5" fill="currentColor"/><rect x="0" y="2" width="5" height="1" fill="currentColor"/>
   </symbol>
+  <!-- 픽셀 손가락 커서 (클릭 모양) -->
+  <symbol id="pxcursor" viewBox="0 0 12 16">
+    <!-- 검지: 얇고 길게 -->
+    <rect x="4" y="0" width="2" height="9" fill="currentColor"/>
+    <!-- 손등/주먹 -->
+    <rect x="3" y="8" width="7" height="6" fill="currentColor"/>
+    <!-- 접힌 손가락 마디 (오른쪽 계단) -->
+    <rect x="6" y="6" width="2" height="2" fill="currentColor"/>
+    <rect x="8" y="7" width="2" height="1" fill="currentColor"/>
+    <!-- 엄지 -->
+    <rect x="2" y="10" width="1" height="3" fill="currentColor"/>
+    <!-- 소맷단 -->
+    <rect x="3" y="14" width="7" height="2" fill="currentColor"/>
+  </symbol>
 </svg>
 
 <!-- ══════════ 세트 1 · 소개 (7장) ══════════ -->
@@ -222,6 +251,7 @@
   <svg class="pxheart" width="120" height="103" style="margin-bottom:40px"><use href="#pxheart"/></svg>
   <h1 class="title title--bold" style="font-size:74px">우클링<br />하루연애란?</h1>
   <p class="cover-sub">연프 나가보고<br />싶었던 적 있어?</p>
+  <span class="page-num">1/4</span>
 </section>
 
 <!-- 2 하루연애가 뭔데 + 진행 순서 -->
@@ -237,6 +267,7 @@
     <li class="item"><span class="n">5</span><div><div class="t">부담없이 2차 만남까지</div><div class="d">개인정보 부담없이 오픈채팅으로 다음 약속으로</div></div></li>
     <li class="item"><span class="n">6</span><div><div class="t">후기 작성</div><div class="d">참여 후 남긴 후기는 우클링 앱에 실려요</div></div></li>
   </ul>
+  <span class="page-num">2/4</span>
 </section>
 
 <!-- 3 왜 클래스에서 + 소제 + 포스트잇 -->
@@ -251,6 +282,7 @@
       <li><svg class="pxstar b" width="30" height="30"><use href="#pxstar"/></svg>3:3이라 1:1 부담도 없어요</li>
     </ul>
   </div>
+  <span class="page-num">3/4</span>
 </section>
 
 <!-- 4 마무리 + CTA -->
@@ -259,7 +291,8 @@
   <svg class="pxheart" width="110" height="94" style="margin-bottom:36px"><use href="#pxheart"/></svg>
   <h2 class="title title--bold" style="font-size:56px">많은 관심<br />부탁드려요</h2>
   <p class="intro" style="margin-bottom:0">지금 바로 신청하고<br />하루연애 참가자가 되어보세요.</p>
-  <span class="cta" style="margin-top:40px">신청은 프로필 링크에서</span>
+  <span class="cta" style="margin-top:40px">신청은 프로필 링크에서<img class="cta-cursor" src="cursor.png" alt="" /></span>
+  <span class="page-num">4/4</span>
 </section>
 
 <!-- ══════════ 세트 2 · QnA (3장: 표지 + 2장) ══════════ -->
@@ -271,6 +304,7 @@
   <p class="eyebrow">우클링 하루연애</p>
   <h1 class="title title--bold" style="font-size:200px; letter-spacing:0.1em">QnA</h1>
   <p class="cover-sub">궁금한 거<br />다 모았어요</p>
+  <span class="page-num">1/4</span>
 </section>
 
 <!-- 2 (Q1~Q3) -->
@@ -290,6 +324,7 @@
       <div class="a"><span class="amark">A</span><span class="atext">참가자는 원데이 클래스비만 내면 돼요.<br />클래스 참가비만 공방에 직접 결제하면 끝.</span></div>
     </div>
   </div>
+  <span class="page-num">2/4</span>
 </section>
 
 <!-- 3 (Q4~Q5) + CTA -->
@@ -305,6 +340,7 @@
       <div class="a"><span class="amark">A</span><span class="atext">이름·나이·전화번호는 운영자에게만 공개되고<br />3개월 후에 파기 해요.<br />2차 만남까지 운영자가 있는 오픈 채팅방에서<br />진행되고, 상대에게 개인 정보가 공개되지 않아요.</span></div>
     </div>
   </div>
+  <span class="page-num">3/4</span>
 </section>
 
 <!-- 4 (우클링 소개) + CTA -->
@@ -321,7 +357,8 @@
     </div>
   </div>
   <div class="grow"></div>
-  <span class="cta">신청은 프로필 링크에서</span>
+  <span class="cta">신청은 프로필 링크에서<img class="cta-cursor" src="cursor.png" alt="" /></span>
+  <span class="page-num">4/4</span>
 </section>
 
 <!-- ══════════ 세트 3 · 1회차 안내 (1장) ══════════ -->
