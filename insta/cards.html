@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>우클링 하루연애 — 인스타 카드뉴스 (픽셀)</title>
+<!-- 픽셀 폰트: Galmuri (웹사이트와 동일) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/galmuri/dist/galmuri.css" />
+<style>
+  /* ── 브랜드 토큰 (brand/tokens/tokens.css 참고) ── */
+  :root {
+    --rose: #e0356b;
+    --rose-deep: #b82a58;
+    --rose-soft: #f591ad;
+    --pink: #ff4d85;
+    --pink-soft: #ff9ec4;
+    --blush: #ffedf2;
+    --blush-deep: #ffdce8;
+    --cream: #fff7f9;
+    --white: #ffffff;
+    --plum: #2b1b24;
+    --plum-mute: #7a6570;
+
+    /* 픽셀 스타일 토큰 (웹과 동일 결) */
+    --px-line: 6px;
+    --px-shadow: 12px 12px 0 var(--plum);
+    --px-shadow-sm: 8px 8px 0 var(--plum);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  ul { list-style: none; }
+  body {
+    background: #d8d8dc;
+    display: flex; flex-wrap: wrap; gap: 40px;
+    padding: 40px; justify-content: center;
+    font-family: "Galmuri11", "Apple SD Gothic Neo", sans-serif;
+  }
+
+  /* ── 카드 공통 ── */
+  .card {
+    width: 1080px; height: 1350px;
+    position: relative; overflow: hidden;
+    padding: 80px;
+    display: flex; flex-direction: column;
+    color: var(--plum);
+    image-rendering: pixelated;
+  }
+  .card svg { image-rendering: pixelated; shape-rendering: crispEdges; }
+  .card__logo { position: absolute; top: 60px; right: 64px; height: 40px; width: auto; }
+
+  .eyebrow { font-size: 34px; font-weight: 700; color: var(--rose); }
+  .title   { font-family: "Galmuri14","Galmuri11"; font-size: 64px; font-weight: 400; line-height: 1.4; }
+  .title--sm { font-size: 54px; }
+  .body    { font-size: 38px; font-weight: 400; line-height: 1.6; color: var(--plum); }
+  .muted   { color: var(--plum-mute); }
+  .grow    { flex: 1; }
+
+  /* 도트 배경 무늬 */
+  .dots { background-image: radial-gradient(var(--blush-deep) 4px, transparent 4px); background-size: 40px 40px; }
+
+  .cover { justify-content: center; align-items: flex-start; }
+  .cover .eyebrow { margin-bottom: 26px; }
+  .head { margin-top: 30px; }
+  .head .title { margin-bottom: 44px; }
+
+  /* CTA 픽셀 버튼 */
+  .cta {
+    align-self: flex-start;
+    background: var(--rose); color: var(--white);
+    font-family: "Galmuri11"; font-weight: 700; font-size: 40px;
+    padding: 26px 44px;
+    border: var(--px-line) solid var(--plum);
+    box-shadow: var(--px-shadow);
+    margin-top: 44px;
+  }
+
+  /* 픽셀 하트/별 심볼 */
+  .pxheart { color: var(--pink); }
+  .pxstar  { color: var(--rose-soft); }
+
+  /* 굵은 제목 (표지·섹션 제목) */
+  .title--bold { font-family: "Galmuri11", "Galmuri14"; font-weight: 700; }
+
+  /* ── 세트 1 · 소개 : 연핑크 배경 ── */
+  /* 정렬 통일: 세로 가운데, 글줄 왼쪽 */
+  .set1 { background: var(--blush); justify-content: center; }
+  .set1 .title, .set1 .intro { text-align: left; }
+
+  /* 표지 서브카피 */
+  .cover-sub { font-family: "Galmuri11"; font-weight: 700; font-size: 46px; line-height: 1.45; color: var(--plum); margin-top: 28px; }
+
+  /* 소개 한 줄 */
+  .intro { font-size: 36px; line-height: 1.55; color: var(--plum); margin: 26px 0 40px; }
+
+  /* 진행 순서 블럭 */
+  .flow { display: flex; flex-direction: column; gap: 18px; }
+  .flow .item {
+    background: var(--white);
+    border: var(--px-line) solid var(--plum);
+    box-shadow: var(--px-shadow-sm);
+    padding: 22px 26px; display: flex; gap: 26px; align-items: center;
+  }
+  .flow .n {
+    flex: 0 0 auto; width: 66px; height: 66px;
+    background: var(--rose); color: var(--white);
+    border: 5px solid var(--plum);
+    display: grid; place-items: center; font-family: "Galmuri14"; font-size: 32px;
+  }
+  .flow .t { font-size: 37px; font-weight: 700; line-height: 1.25; }
+  .flow .d { font-size: 27px; color: var(--plum-mute); margin-top: 6px; line-height: 1.35; }
+
+  /* 포스트잇 (왜 클래스에서 만나?) */
+  .postit {
+    align-self: flex-start;
+    background: var(--cream);
+    border: var(--px-line) solid var(--plum);
+    box-shadow: var(--px-shadow);
+    padding: 40px 44px;
+    transform: rotate(-1.6deg);
+  }
+  .postit li { position: relative; padding-left: 48px; font-size: 38px; font-weight: 400; line-height: 1.4; margin-bottom: 26px; }
+  .postit li:last-child { margin-bottom: 0; }
+  .postit li .b { position: absolute; left: 0; top: 8px; }
+
+  /* 왜 클래스에서 — 제목 밑 카피 */
+  .why-sub { font-size: 36px; font-weight: 700; color: var(--rose); margin-top: 22px; }
+
+  /* ── 세트 2 · QnA : 화이트 배경 + 픽셀 말풍선 ── */
+  .set2 { background: var(--white); }
+  /* 표지: 픽셀 하트 안에 텍스트 (배경은 내용 카드와 동일한 하트 무늬) */
+  .qna-cover { justify-content: center; align-items: center; }
+  .heart-badge { position: relative; width: 500px; height: 428px; display: grid; place-items: center; }
+  .heart-badge > svg {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    color: var(--pink-soft);
+    /* 4방향 드롭섀도로 픽셀 하트에 검정 테두리 */
+    filter:
+      drop-shadow(6px 0 0 var(--plum)) drop-shadow(-6px 0 0 var(--plum))
+      drop-shadow(0 6px 0 var(--plum)) drop-shadow(0 -6px 0 var(--plum));
+  }
+  .heart-text { position: relative; text-align: center; transform: translateY(-18px); }
+  .hb-brand { font-family: "Galmuri11"; font-weight: 700; font-size: 32px; color: var(--rose); margin-bottom: 16px; }
+  .hb-qa {
+    font-family: "Galmuri14"; font-weight: 700; font-size: 82px; color: var(--plum);
+    letter-spacing: .04em; -webkit-text-stroke: 2px var(--plum);
+  }
+  /* 내용 카드: 흰 배경 + 픽셀 하트 반복 무늬 */
+  .qna-bg {
+    background-color: var(--white);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cg fill='%23ffdce8'%3E%3Crect x='53' y='48' width='14' height='7'/%3E%3Crect x='74' y='48' width='14' height='7'/%3E%3Crect x='46' y='55' width='49' height='7'/%3E%3Crect x='46' y='62' width='49' height='7'/%3E%3Crect x='53' y='69' width='35' height='7'/%3E%3Crect x='60' y='76' width='21' height='7'/%3E%3Crect x='67' y='83' width='7' height='7'/%3E%3C/g%3E%3C/svg%3E");
+  }
+  .qa-list { display: flex; flex-direction: column; gap: 36px; margin-top: 180px; }
+  .qa {
+    background: var(--blush);
+    border: var(--px-line) solid var(--plum);
+    box-shadow: var(--px-shadow-sm);
+    padding: 34px 38px;
+  }
+  .qa .q { display: flex; gap: 22px; align-items: flex-start; margin-bottom: 16px; }
+  .qa .qmark { font-family: "Galmuri14"; font-weight: 700; font-size: 46px; color: var(--rose); flex: 0 0 auto; }
+  .qa .qtext { font-family: "Galmuri11"; font-size: 42px; font-weight: 700; line-height: 1.35; color: var(--plum); }
+  .qa .a { display: flex; gap: 22px; align-items: flex-start; }
+  .qa .amark { font-family: "Galmuri14"; font-weight: 700; font-size: 42px; color: var(--pink); flex: 0 0 auto; }
+  .qa .atext { font-size: 34px; font-weight: 400; line-height: 1.5; color: var(--plum); }
+
+  /* ── 세트 3 · 안내 : 로즈 그라데이션 + 은은한 하트 무늬 ── */
+  .set3 {
+    color: var(--white); justify-content: center;
+    background-color: var(--rose-deep);
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150' viewBox='0 0 150 150'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Crect x='58' y='53' width='14' height='7'/%3E%3Crect x='79' y='53' width='14' height='7'/%3E%3Crect x='51' y='60' width='49' height='7'/%3E%3Crect x='51' y='67' width='49' height='7'/%3E%3Crect x='58' y='74' width='35' height='7'/%3E%3Crect x='65' y='81' width='21' height='7'/%3E%3Crect x='72' y='88' width='7' height='7'/%3E%3C/g%3E%3C/svg%3E"),
+      linear-gradient(155deg, #e0356b 0%, #b82a58 100%);
+  }
+  .set3 .a3-title {
+    font-family: "Galmuri14", "Galmuri11"; font-weight: 700;
+    color: var(--white); text-align: center; margin-bottom: 52px;
+  }
+  .set3 .a3-title .sm {
+    display: block; font-size: 46px; margin-bottom: 14px;
+  }
+  .set3 .a3-title .lg {
+    display: flex; align-items: center; justify-content: center; gap: 20px;
+    font-size: 100px; letter-spacing: .12em;
+  }
+  .set3 .a3-title .lg-heart { color: var(--white); flex: 0 0 auto; }
+  /* 정보 블럭: 흰 배경 + 연핑크 픽셀 그림자 */
+  .info { display: flex; flex-direction: column; gap: 22px; }
+  .info li {
+    display: flex; gap: 24px; align-items: center; font-size: 34px; line-height: 1.35;
+    background: var(--white); color: var(--plum);
+    border: 5px solid var(--plum);
+    box-shadow: 9px 9px 0 var(--pink-soft);
+    padding: 22px 28px;
+  }
+  .info .ico { font-size: 40px; flex: 0 0 auto; }
+  .info .k { font-weight: 700; }
+  .info .v { color: var(--plum-mute); }
+  .set3 .cta { background: var(--white); color: var(--rose); box-shadow: 10px 10px 0 var(--rose-deep); margin-top: 48px; align-self: center; }
+  .foot-note { margin-top: 24px; font-size: 30px; color: rgba(255,255,255,.9); text-align: center; }
+</style>
+</head>
+<body>
+
+<!-- 재사용 픽셀 심볼 -->
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="pxheart" viewBox="0 0 7 6">
+    <rect x="1" y="0" width="2" height="1" fill="currentColor"/><rect x="4" y="0" width="2" height="1" fill="currentColor"/>
+    <rect x="0" y="1" width="7" height="1" fill="currentColor"/><rect x="0" y="2" width="7" height="1" fill="currentColor"/>
+    <rect x="1" y="3" width="5" height="1" fill="currentColor"/><rect x="2" y="4" width="3" height="1" fill="currentColor"/>
+    <rect x="3" y="5" width="1" height="1" fill="currentColor"/>
+  </symbol>
+  <symbol id="pxstar" viewBox="0 0 5 5">
+    <rect x="2" y="0" width="1" height="5" fill="currentColor"/><rect x="0" y="2" width="5" height="1" fill="currentColor"/>
+  </symbol>
+</svg>
+
+<!-- ══════════ 세트 1 · 소개 (7장) ══════════ -->
+
+<!-- 1 표지 -->
+<section class="card set1 cover dots" data-name="01_소개_01">
+  <img class="card__logo" src="assets/ucling-wordmark-round-rose.png" alt="우클링" />
+  <svg class="pxheart" width="120" height="103" style="margin-bottom:40px"><use href="#pxheart"/></svg>
+  <h1 class="title title--bold" style="font-size:74px">우클링<br />하루연애란?</h1>
+  <p class="cover-sub">연프 나가보고<br />싶었던 적 있어?</p>
+</section>
+
+<!-- 2 하루연애가 뭔데 + 진행 순서 -->
+<section class="card set1" data-name="01_소개_02">
+  <img class="card__logo" src="assets/ucling-wordmark-round-rose.png" alt="우클링" />
+  <h2 class="title title--bold" style="font-size:56px">하루연애가 뭔데?</h2>
+  <p class="intro">원데이클래스에서 3:3으로 만나는<br />하루짜리 연애 프로그램이에요.</p>
+  <ul class="flow">
+    <li class="item"><span class="n">1</span><div><div class="t">신청</div><div class="d">회차별 선착순 모집, 정원 차면 마감</div></div></li>
+    <li class="item"><span class="n">2</span><div><div class="t">운영자가 직접 매칭</div><div class="d">매칭되면 DM으로 안내해요</div></div></li>
+    <li class="item"><span class="n">3</span><div><div class="t">같이 수업 듣기</div><div class="d">원데이클래스에서 자연스럽게</div></div></li>
+    <li class="item"><span class="n">4</span><div><div class="t">사랑의 작대기</div><div class="d">비공개로 마음에 든 사람을 지목, 서로 지목하면 연결</div></div></li>
+    <li class="item"><span class="n">5</span><div><div class="t">부담없이 2차 만남까지</div><div class="d">개인정보 부담없이 오픈채팅으로 다음 약속으로</div></div></li>
+  </ul>
+</section>
+
+<!-- 3 왜 클래스에서 + 소제 + 포스트잇 -->
+<section class="card set1 dots" data-name="01_소개_03">
+  <img class="card__logo" src="assets/ucling-wordmark-round-rose.png" alt="우클링" />
+  <h2 class="title title--bold">왜 클래스에서<br />만나?</h2>
+  <p class="why-sub">소개팅은 망해도 머그컵은 남는다</p>
+  <div class="postit" style="margin-top:44px">
+    <ul>
+      <li><svg class="pxstar b" width="30" height="30"><use href="#pxstar"/></svg>손이 바쁘면 어색할 틈이 없어요</li>
+      <li><svg class="pxstar b" width="30" height="30"><use href="#pxstar"/></svg>할 말이 저절로 생겨요</li>
+      <li><svg class="pxstar b" width="30" height="30"><use href="#pxstar"/></svg>3:3이라 1:1 부담도 없어요</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 4 마무리 + CTA -->
+<section class="card set1 cover dots" data-name="01_소개_04">
+  <img class="card__logo" src="assets/ucling-wordmark-round-rose.png" alt="우클링" />
+  <svg class="pxheart" width="110" height="94" style="margin-bottom:36px"><use href="#pxheart"/></svg>
+  <h2 class="title title--bold" style="font-size:56px">많은 관심<br />부탁드려요</h2>
+  <p class="intro" style="margin-bottom:0">지금 바로 신청하고<br />하루연애 참가자가 되어보세요.</p>
+  <span class="cta" style="margin-top:40px">신청은 프로필 링크에서</span>
+</section>
+
+<!-- ══════════ 세트 2 · QnA (3장: 표지 + 2장) ══════════ -->
+
+<!-- 1 표지 (소개 표지와 동일한 레이아웃) -->
+<section class="card set2 qna-bg cover" data-name="02_QnA_01">
+  <img class="card__logo" src="assets/ucling-wordmark-round-rose.png" alt="우클링" />
+  <svg class="pxheart" width="120" height="103" style="margin-bottom:40px"><use href="#pxheart"/></svg>
+  <p class="eyebrow">우클링 하루연애</p>
+  <h1 class="title title--bold" style="font-size:200px; letter-spacing:0.1em">QnA</h1>
+  <p class="cover-sub">궁금한 거<br />다 모았어요</p>
+</section>
+
+<!-- 2 (Q1~Q3) -->
+<section class="card set2 qna-bg" data-name="02_QnA_02">
+  <img class="card__logo" src="assets/ucling-wordmark-round-rose.png" alt="우클링" />
+  <div class="qa-list">
+    <div class="qa">
+      <div class="q"><span class="qmark">Q</span><span class="qtext">혼자 신청해도 돼요?</span></div>
+      <div class="a"><span class="amark">A</span><span class="atext">개인으로만 신청이 가능해요.<br />다들 혼자 오니 부담 없어요.</span></div>
+    </div>
+    <div class="qa">
+      <div class="q"><span class="qmark">Q</span><span class="qtext">누가 오나요?</span></div>
+      <div class="a"><span class="amark">A</span><span class="atext">20-30대예요.<br />성별·지역 보고 저희가 직접 매칭해요.</span></div>
+    </div>
+    <div class="qa">
+      <div class="q"><span class="qmark">Q</span><span class="qtext">얼마예요?</span></div>
+      <div class="a"><span class="amark">A</span><span class="atext">참가자는 원데이 클래스비만 내면 돼요.<br />클래스 참가비만 공방에 직접 결제하면 끝.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 (Q4~Q5) + CTA -->
+<section class="card set2 qna-bg" data-name="02_QnA_03">
+  <img class="card__logo" src="assets/ucling-wordmark-round-rose.png" alt="우클링" />
+  <div class="qa-list">
+    <div class="qa">
+      <div class="q"><span class="qmark">Q</span><span class="qtext">어디서, 언제 해요?</span></div>
+      <div class="a"><span class="amark">A</span><span class="atext">서울 어딘가에서 진행 돼요.<br />날짜는 신청 마감 후 선호 시간대로 정해서<br />DM으로 매칭 연락 드려요.</span></div>
+    </div>
+    <div class="qa">
+      <div class="q"><span class="qmark">Q</span><span class="qtext">안전한가요?</span></div>
+      <div class="a"><span class="amark">A</span><span class="atext">이름·나이·전화번호는 운영자에게만 공개되고<br />3개월 후에 파기 해요.<br />2차 만남까지 운영자가 있는 오픈 채팅방에서<br />진행되고, 상대에게 개인 정보가 공개되지 않아요.</span></div>
+    </div>
+  </div>
+  <div class="grow"></div>
+  <span class="cta">신청은 프로필 링크에서</span>
+</section>
+
+<!-- ══════════ 세트 3 · 1회차 안내 (1장) ══════════ -->
+
+<section class="card set3" data-name="03_안내_01">
+  <img class="card__logo" src="assets/ucling-wordmark-round-white.png" alt="우클링" />
+  <h1 class="a3-title">
+    <span class="sm">우클링 하루연애</span>
+    <span class="lg">
+      <svg class="lg-heart" width="60" height="51" aria-hidden="true"><use href="#pxheart"/></svg>
+      1회차 모집
+      <svg class="lg-heart" width="60" height="51" aria-hidden="true"><use href="#pxheart"/></svg>
+    </span>
+  </h1>
+  <ul class="info">
+    <li><span class="ico">📅</span><span><span class="k">신청 마감</span> · <span class="v">9/13(일) 23:59</span></span></li>
+    <li><span class="ico">💌</span><span><span class="k">매칭 안내</span> · <span class="v">9/15(화) DM</span></span></li>
+    <li><span class="ico">🕯</span><span><span class="k">클래스 진행</span> · <span class="v">9/18(금) ~ 9/20(일) 중 하루</span></span></li>
+    <li><span class="ico">📍</span><span><span class="k">장소</span> · <span class="v">서울, 매칭 후 안내</span></span></li>
+    <li><span class="ico">👥</span><span><span class="k">모집</span> · <span class="v">3:3 선착순, 정원 차면 마감</span></span></li>
+  </ul>
+  <span class="cta">신청은 프로필 링크에서</span>
+  <p class="foot-note">우클링은 수수료 없음, 클래스비만 직접 결제</p>
+</section>
+
+</body>
+</html>

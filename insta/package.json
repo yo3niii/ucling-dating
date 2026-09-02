@@ -1,0 +1,11 @@
+{
+  "name": "ucling-insta-cards",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "export": "node export.mjs"
+  },
+  "dependencies": {
+    "playwright": "^1.62.1"
+  }
+}
