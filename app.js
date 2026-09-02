@@ -99,6 +99,7 @@ function collect() {
     연락처: form.contact.value.trim(),
     인스타: form.insta.value.trim(),
     개인정보동의: form.agree.checked ? "동의" : "",
+    후기동의: form.reviewAgree.checked ? "동의" : "",
     _시간대개수: times.length, // 검증용 (전송 전 제거)
     _관심개수: classes.length, // 검증용 (전송 전 제거)
   };
@@ -118,6 +119,7 @@ function validate(d) {
   if (!d.연락처) return "연락처를 입력해주세요.";
   if (!d.인스타) return "인스타 아이디를 입력해주세요.";
   if (!d.개인정보동의) return "개인정보 수집·이용에 동의해주세요. (필수)";
+  if (!d.후기동의) return "후기 참여에 동의해주세요. (필수)";
   return null;
 }
 
