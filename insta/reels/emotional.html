@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>우클링 하루연애 — 감성형 릴스</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/galmuri/dist/galmuri.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+<style>
+  :root{
+    --rose:#e0356b; --rose-deep:#b82a58; --rose-soft:#f591ad;
+    --pink:#ff4d85; --blush:#ffedf2; --blush-deep:#ffdce8; --cream:#fff7f9; --white:#fff;
+    --plum:#2b1b24; --plum-mute:#7a6570;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{width:1080px;height:1920px;overflow:hidden;background:#000;}
+  .stage{position:relative;width:1080px;height:1920px;overflow:hidden;
+         font-family:"Galmuri11","Apple SD Gothic Neo",sans-serif;color:var(--plum);}
+  .gothic .cap,.gothic .subcap,.gothic .cta,.gothic .badge{
+    font-family:"Pretendard Variable","Pretendard","Apple SD Gothic Neo",sans-serif !important;font-weight:800;}
+  .scene{position:absolute;inset:0;opacity:0;overflow:hidden;}
+  .scene.bg{background-size:cover;background-position:center;image-rendering:pixelated;}
+  img.spr{position:absolute;image-rendering:pixelated;}
+  img.ctr{left:50%;transform:translateX(-50%);}
+
+  /* 하늘+들판 (컷5·6) */
+  .bg-sky{background:linear-gradient(180deg,#7ec8ff 0%, #a9dcff 40%, #d3efff 62%);}
+  .grass{position:absolute;left:0;right:0;bottom:0;height:1180px;
+         background:url('assets/bg_grass.png') center bottom / cover;}
+  .sun{position:absolute;width:150px;height:150px;border-radius:50%;background:#ffe38c;
+       box-shadow:0 0 0 22px rgba(255,227,140,.35);}
+  .cloud{position:absolute;height:64px;background:#fff;border-radius:100px;opacity:.95;
+         box-shadow:64px 12px 0 -6px #fff, -64px 16px 0 -10px #fff;}
+
+  /* 자막: 픽셀, 크고 굵은 흰 글씨 + 8방향 플럼 외곽선 */
+  .cap{position:absolute;left:40px;right:40px;text-align:center;
+       font-family:"Galmuri14","Galmuri11";line-height:1.42;color:#fff;
+       text-shadow:-4px -4px 0 #2b1b24,0 -4px 0 #2b1b24,4px -4px 0 #2b1b24,4px 0 0 #2b1b24,
+                   4px 4px 0 #2b1b24,0 4px 0 #2b1b24,-4px 4px 0 #2b1b24,-4px 0 0 #2b1b24,
+                   0 9px 18px rgba(0,0,0,.45);}
+  .cap .l1{display:block;} .cap.big{font-size:86px;} .cap.mid{font-size:70px;}
+  .cap .em{color:#ff9ec4;}
+  .subcap{position:absolute;left:30px;right:30px;text-align:center;
+       font-family:"Galmuri14","Galmuri11";font-size:58px;color:#fff;line-height:1.4;
+       text-shadow:-3px -3px 0 #000,3px -3px 0 #000,3px 3px 0 #000,-3px 3px 0 #000,0 6px 14px rgba(0,0,0,.5);}
+
+  .pxheart{position:absolute;width:150px;height:136px;transform-origin:center;}
+  .pxheart:before,.pxheart:after{content:"";position:absolute;top:0;width:82px;height:124px;
+       background:var(--pink);border-radius:82px 82px 0 0;}
+  .pxheart:before{left:68px;transform:rotate(-45deg);transform-origin:0 100%;}
+  .pxheart:after{left:0;transform:rotate(45deg);transform-origin:100% 100%;}
+  .miniheart{position:absolute;color:var(--pink);font-size:60px;font-family:"Galmuri11";
+       text-shadow:2px 2px 0 rgba(0,0,0,.35);}
+
+  .cta{position:absolute;left:50%;transform:translateX(-50%);white-space:nowrap;
+       background:var(--rose);color:var(--white);font-family:"Galmuri11";font-weight:700;
+       font-size:50px;padding:28px 48px;box-shadow:14px 14px 0 var(--plum);}
+  .badge{position:absolute;left:50%;transform:translateX(-50%);white-space:nowrap;
+       font-size:38px;color:var(--white);font-family:"Galmuri11";
+       background:rgba(43,27,36,.55);padding:12px 26px;border-radius:8px;}
+</style>
+</head>
+<body>
+<div class="stage" id="stage">
+
+  <!-- 컷1: 하트시그널·환승연애 (거실) -->
+  <div class="scene bg" id="s1" style="background-image:url('assets/bg_room.png');">
+    <img class="spr ctr" id="c1_clii" src="assets/clii_front.png" style="height:620px;top:900px;">
+    <div class="miniheart" id="c1_h1" style="left:640px;top:880px;">♥</div>
+    <div class="miniheart" id="c1_h2" style="left:700px;top:820px;">♥</div>
+    <div class="miniheart" id="c1_h3" style="left:600px;top:800px;">♥</div>
+    <div class="cap mid" id="c1_cap" style="top:420px;">
+      <span class="l1">하트시그널, 환승연애 보면서</span>
+      <span class="l1">“나도 나가고싶다..” 했었어</span></div>
+  </div>
+
+  <!-- 컷2: 검은 배경, 흰 글씨만 -->
+  <div class="scene" id="s2" style="background:#000;">
+    <img class="spr ctr" id="c2_clii" src="assets/clii_cry.png" style="height:640px;top:760px;">
+    <div class="cap big" id="c2_cap" style="top:400px;">
+      <span class="l1">근데 나갈</span><span class="l1">방법이 없었지</span></div>
+    <div class="subcap" id="c2_sub" style="top:1440px;">
+      난 그냥 평범한<br>K-직장인/대학생이니까</div>
+  </div>
+
+  <!-- 컷3: 원데이 클래스 3:3 (공방) -->
+  <div class="scene bg" id="s3" style="background-image:url('assets/bg_class.png');">
+    <img class="spr ctr" id="c3_scene" src="assets/baking.png" style="width:920px;top:860px;">
+    <div class="cap big" id="c3_cap" style="top:430px;">
+      <span class="l1">동네 원데이 클래스에서</span>
+      <span class="l1"><span class="em">3:3</span>으로 만나요</span></div>
+  </div>
+
+  <!-- 컷4: 머그컵은 남으니까 (공방) -->
+  <div class="scene bg" id="s4" style="background-image:url('assets/bg_class.png');">
+    <img class="spr ctr" id="c4_scene" src="assets/mugs.png" style="width:800px;top:830px;">
+    <div class="cap big" id="c4_cap" style="top:430px;">
+      <span class="l1">소개팅은 망해도</span><span class="l1">머그컵은 남으니까</span></div>
+  </div>
+
+  <!-- 컷5: 비공개로 지목 (들판 배경2) -->
+  <div class="scene bg" id="s5" style="background-image:url('assets/bg_field.png');">
+    <div class="pxheart" id="c5_heart" style="left:540px;top:690px;"></div>
+    <img class="spr ctr" id="c5_couple" src="assets/holdhands.png" style="width:720px;top:800px;">
+    <div class="cap big" id="c5_cap" style="top:420px;">
+      <span class="l1">마음에 들면</span><span class="l1">비공개로 지목</span></div>
+  </div>
+
+  <!-- 컷6: 내 인연을 찾아보세요 (들판 배경2, 캐릭터 컷5와 동일 위치) + CTA -->
+  <div class="scene bg" id="s6" style="background-image:url('assets/bg_field.png');">
+    <img class="spr ctr" id="c6_couple" src="assets/couple.png" style="width:720px;top:800px;">
+    <div class="cap big" id="c6_cap" style="top:380px;">
+      <span class="l1">우클링 하루연애에서</span><span class="l1">내 인연을 찾아보세요</span></div>
+    <div class="cta" id="c6_btn" style="top:1470px;">신청은 프로필 링크에서</div>
+    <div class="badge" id="c6_badge" style="top:1660px;">우클링 하루연애 · 1회차 모집 중</div>
+  </div>
+
+</div>
+
+<script>
+const params=new URLSearchParams(location.search);
+if(params.get('font')==='gothic') document.getElementById('stage').classList.add('gothic');
+
+const FPS=30, DUR=12.0;
+const S=(el)=>document.getElementById(el);
+const clamp01=x=>Math.max(0,Math.min(1,x));
+const lerp=(a,b,t)=>a+(b-a)*t;
+const ease=t=>t<0.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
+const easeOutBack=t=>{const c1=1.70158,c3=c1+1;return 1+c3*Math.pow(t-1,3)+c1*Math.pow(t-1,2);};
+function vis(t,s,e,f=0.3){ if(t<s||t>e)return 0; return Math.min(1,(t-s)/f,(e-t)/f,1); }
+function capIn(el,local){ const p=ease(clamp01(local/0.4)); el.style.opacity=p; el.style.transform=`translateY(${lerp(40,0,p)}px)`; }
+function ctrScale(el,s){ el.style.transform=`translateX(-50%) scale(${s})`; }
+
+const WIN={s1:[0,2.0],s2:[2.0,3.8],s3:[3.8,6.0],s4:[6.0,8.0],s5:[8.0,9.8],s6:[9.8,12.01]};
+
+function render(t){
+  for(const k in WIN){ S(k).style.opacity=vis(t,WIN[k][0],WIN[k][1]); }
+  {const lt=t-WIN.s1[0];
+   S('c1_clii').style.transform=`translateX(-50%) translateY(${Math.sin(lt*3)*8}px)`;
+   [['c1_h1',0],['c1_h2',0.4],['c1_h3',0.8]].forEach(([id,ph])=>{
+     const pr=((lt+ph)%1.4)/1.4; S(id).style.opacity=Math.sin(pr*Math.PI);
+     S(id).style.transform=`translateY(${lerp(0,-90,pr)}px)`; });
+   capIn(S('c1_cap'),lt);}
+  {const lt=t-WIN.s2[0]; ctrScale(S('c2_clii'), lerp(0.9,1,clamp01(easeOutBack(clamp01(lt/0.5)))));
+   capIn(S('c2_cap'),lt);
+   S('c2_sub').style.opacity=clamp01((lt-0.6)/0.3);
+   S('c2_sub').style.transform=`translateY(${lerp(30,0,ease(clamp01((lt-0.6)/0.4)))}px)`;}
+  {const lt=t-WIN.s3[0]; ctrScale(S('c3_scene'), lerp(0.95,1,ease(clamp01(lt/0.6)))); capIn(S('c3_cap'),lt);}
+  {const lt=t-WIN.s4[0]; ctrScale(S('c4_scene'), lerp(0.95,1,ease(clamp01(lt/0.6)))); capIn(S('c4_cap'),lt);}
+  {const lt=t-WIN.s5[0]; ctrScale(S('c5_couple'), lerp(0.94,1,ease(clamp01(lt/0.6))));
+   const ph=easeOutBack(clamp01((lt-0.4)/0.5)); S('c5_heart').style.opacity=clamp01((lt-0.4)/0.2);
+   S('c5_heart').style.transform=`translateX(-50%) scale(${clamp01(ph)*(1+Math.sin(Math.max(0,lt-0.9)*4)*0.06)})`;
+   capIn(S('c5_cap'),lt);}
+  {const lt=t-WIN.s6[0]; ctrScale(S('c6_couple'), lerp(0.94,1,ease(clamp01(lt/0.6)))); capIn(S('c6_cap'),lt);
+   const pb=ease(clamp01((lt-0.5)/0.35)); S('c6_btn').style.opacity=pb;
+   S('c6_btn').style.transform=`translateX(-50%) translateY(${lerp(28,0,pb)}px)`;
+   S('c6_badge').style.opacity=clamp01((lt-0.9)/0.3);}
+}
+window.__render=render; window.__DUR=DUR; window.__FPS=FPS;
+if(!window.__CAPTURE){ let start=null;
+  function loop(ts){ if(start==null)start=ts; render(((ts-start)/1000)%DUR); requestAnimationFrame(loop); }
+  requestAnimationFrame(loop);
+}
+</script>
+</body>
+</html>

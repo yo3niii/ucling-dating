@@ -72,7 +72,29 @@
 - `기획서.md` — 전체 컨셉, 운영 흐름, 신청 항목, 개인정보 방침
 - `brand/DESIGN-SYSTEM.md` — 색상·로고 규칙
 - `brand/tokens/tokens.css` — 색상 변수
+- `brand/FIGMA-MCP-RULES.md` — Figma MCP로 디자인 가져올 때 규칙 (피그마 색/폰트를 이 프로젝트 토큰으로 매핑)
 
 ## 커뮤니케이션
 
 - 한국어로. 개념 설명은 쉽게, 왜 그렇게 하는지 이유도 함께.
+
+## 하네스: 인스타 카드뉴스
+
+- **목표**: 우클링 하루연애 인스타 카드뉴스를 기획→Figma 제작까지 반복 가능하게 찍어낸다. 콘텐츠는 미끼, 목적은 하루연애 신청 수렴.
+- **트리거**: "카드뉴스 만들어줘", "인스타 카드/콘텐츠 만들어줘", 특정 주제(애착유형·MBTI·데이트 등) 카드 요청 → `.claude/skills/cardnews/SKILL.md` 오케스트레이터 실행.
+- **구성**: 서브에이전트 `cardnews-copywriter`(카피) → `cardnews-art-director`(템플릿 매핑) → `cardnews-qa`(브랜드·개인정보 검수), 실제 Figma 제작은 메인 세션. 템플릿 맵: `.claude/skills/cardnews/references/template-map.md`.
+
+## 하네스: 인스타 릴스(세로 영상 광고)
+
+- **목표**: 우클링 하루연애 인스타 릴스(9:16 세로 영상)를 기획→제작까지 반복 가능하게 찍어낸다. 메타 5톤 광고 테스트용 영상 소재. 콘텐츠는 미끼, 목적은 하루연애 신청 수렴.
+- **트리거**: "릴스/영상/동영상 광고 만들어줘", "숏폼/세로영상" → `.claude/skills/reels/SKILL.md` 오케스트레이터 실행.
+- **구성**: 서브에이전트 `reels-scriptwriter`(초 단위 스크립트·훅) → `reels-storyboard-director`(컷 콘티·모션·스톡 슬롯) → `reels-qa`(브랜드·개인정보·영상규격 검수), 실제 영상 제작은 메인 세션. 규격: `.claude/skills/reels/references/reels-spec.md`.
+- **제작 도구(무료)**: 픽셀편 = HTML/CSS 애니 + Playwright 프레임 캡처 + ffmpeg(+ 마스코트는 gemini-3-pro-imagegen). 실사편 = claude-in-chrome MCP 스톡 다운로드 + ffmpeg 편집. Figma·CapCut·유료 MCP 안 씀.
+- **카드뉴스 하네스와 별개**다(정지 카드+Figma ↔ 초 단위 영상). 파일·자산을 섞지 않는다.
+
+### 변경 이력
+
+| 날짜 | 변경 | 대상 | 사유 |
+|---|---|---|---|
+| 2026-09-11 | 하네스 신규 구축 | agents·cardnews 스킬 | 카드뉴스 주기 제작 자동화, 픽셀→MZ Figma 전환 |
+| 2026-09-11 | 릴스 하네스 신규 구축 | agents·reels 스킬 | 세로 영상 광고 주기 제작(감성 픽셀·유머 실사), 메타 5톤 테스트 소재 |

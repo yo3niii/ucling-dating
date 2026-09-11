@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>우클링 하루연애 — 유머형 릴스(픽셀)</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/galmuri/dist/galmuri.css" />
+<style>
+  :root{
+    --rose:#e0356b; --rose-deep:#b82a58; --rose-soft:#f591ad;
+    --pink:#ff4d85; --blush:#ffedf2; --blush-deep:#ffdce8; --cream:#fff7f9; --white:#fff;
+    --plum:#2b1b24; --plum-mute:#7a6570;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{width:1080px;height:1920px;overflow:hidden;background:#000;}
+  .stage{position:relative;width:1080px;height:1920px;overflow:hidden;
+         font-family:"Galmuri11","Apple SD Gothic Neo",sans-serif;color:var(--plum);}
+  .scene{position:absolute;inset:0;opacity:0;overflow:hidden;}
+  .scene.bg{background-size:cover;background-position:center;image-rendering:pixelated;}
+  img.spr{position:absolute;image-rendering:pixelated;}
+  img.ctr{left:50%;transform:translateX(-50%);}
+
+  .cap{position:absolute;left:40px;right:40px;text-align:center;
+       font-family:"Galmuri14","Galmuri11";line-height:1.42;color:#fff;
+       text-shadow:-4px -4px 0 #2b1b24,0 -4px 0 #2b1b24,4px -4px 0 #2b1b24,4px 0 0 #2b1b24,
+                   4px 4px 0 #2b1b24,0 4px 0 #2b1b24,-4px 4px 0 #2b1b24,-4px 0 0 #2b1b24,
+                   0 9px 18px rgba(0,0,0,.45);}
+  .cap .l1{display:block;} .cap.big{font-size:82px;} .cap.mid{font-size:66px;}
+  .cap .em{color:#ff9ec4;}
+  /* 동그란 블럭 자막(컷4) */
+  .capfill{position:absolute;left:0;right:0;text-align:center;}
+  .pill{display:inline-block;background:rgba(43,27,36,.75);color:#fff;
+        font-family:"Galmuri14","Galmuri11";font-size:78px;padding:22px 52px;border-radius:60px;}
+
+  /* 픽셀 카톡 (컷1) */
+  .kakao{position:absolute;left:70px;right:70px;background:#93b0c8;
+         border:10px solid var(--plum);padding:28px 24px 14px;
+         box-shadow:16px 16px 0 rgba(43,27,36,.35);transform-origin:center top;}
+  .kday{text-align:center;margin:6px 0 20px;}
+  .kday span{background:rgba(43,27,36,.3);color:#fff;font-size:26px;
+             font-family:"Galmuri11";padding:5px 18px;border-radius:20px;}
+  .krow{display:flex;margin-bottom:18px;}
+  .krow.me{justify-content:flex-end;}
+  .kbub{max-width:80%;font-size:30px;line-height:1.45;padding:18px 22px;
+        border:5px solid var(--plum);color:var(--plum);font-family:"Galmuri11";}
+  .kbub.them{background:#fff;} .kbub.me{background:#fae100;}
+
+  /* 말풍선 (추가컷) */
+  .bubble{position:absolute;left:80px;right:80px;background:#fff;border:8px solid var(--plum);
+    border-radius:30px;padding:30px 34px;font-family:"Galmuri11";font-size:52px;line-height:1.45;
+    color:var(--plum);text-align:center;box-shadow:12px 12px 0 rgba(43,27,36,.25);transform-origin:center bottom;}
+  .bubble:after{content:"";position:absolute;bottom:-30px;left:50%;transform:translateX(-50%);
+    width:0;height:0;border:22px solid transparent;border-top-color:var(--plum);}
+
+  .pxheart{position:absolute;width:150px;height:136px;transform-origin:center;}
+  .pxheart:before,.pxheart:after{content:"";position:absolute;top:0;width:82px;height:124px;
+       background:var(--pink);border-radius:82px 82px 0 0;}
+  .pxheart:before{left:68px;transform:rotate(-45deg);transform-origin:0 100%;}
+  .pxheart:after{left:0;transform:rotate(45deg);transform-origin:100% 100%;}
+  .spark{position:absolute;color:#ffe38c;font-size:70px;font-family:"Galmuri11";
+       text-shadow:2px 2px 0 rgba(43,27,36,.3);}
+  .bulb{position:absolute;font-size:130px;transform-origin:center bottom;
+       filter:drop-shadow(0 0 20px rgba(255,220,120,.95));}
+
+  .cta{position:absolute;left:50%;transform:translateX(-50%);white-space:nowrap;
+       background:var(--rose);color:var(--white);font-family:"Galmuri11";font-weight:700;
+       font-size:50px;padding:28px 48px;box-shadow:14px 14px 0 var(--plum);}
+  .badge{position:absolute;left:50%;transform:translateX(-50%);white-space:nowrap;
+       font-size:38px;color:var(--white);font-family:"Galmuri11";
+       background:rgba(43,27,36,.55);padding:12px 26px;border-radius:8px;}
+</style>
+</head>
+<body>
+<div class="stage" id="stage">
+
+  <!-- 컷1: 망한 소개팅 카톡 (핑크방) -->
+  <div class="scene bg" id="s1" style="background-image:url('assets/bg_pinkroom.png');">
+    <div class="cap mid" id="c1_cap" style="top:90px;">소개팅 결과.jpg ㅋㅋㅋㅋ</div>
+    <div class="kakao" id="c1_kakao" style="top:210px;">
+      <div class="kday"><span>오후 1:29</span></div>
+      <div class="krow me"><div class="kbub me">퇴근 몇시에 해요 저녁에<br>치맥한잔 하러 렛츠기릿~~?</div></div>
+      <div class="krow"><div class="kbub them">죄송한데 저희는 인연이 아닌거 같습니다. 그리고 소개팅 처음 나오실때 같은 공간 있는게 부끄러울 정도로 외모관리 좀 하셔야 할 거 같구요. 보통 같은 급이 나온다고 하는데 제가 그렇게까지 추락했나 자괴감 장난 아니었어요. 답장 하시지 마세요. 이걸로 끝냈으면 해요!</div></div>
+      <div class="kday" style="text-align:right;margin:0;"><span style="background:none;color:var(--plum-mute);">오후 7:05</span></div>
+    </div>
+    <img class="spr ctr" id="c1_a" src="assets/clii_front.png" style="height:600px;top:980px;">
+    <img class="spr ctr" id="c1_b" src="assets/clii_meltdown.png" style="height:620px;top:960px;opacity:0;">
+  </div>
+
+  <!-- 컷2: 한숨 (가을 거리) -->
+  <div class="scene bg" id="s2" style="background-image:url('assets/bg_street.png');">
+    <img class="spr ctr" id="c2_clii" src="assets/clii_cry.png" style="height:640px;top:900px;">
+    <div class="cap big" id="c2_cap" style="top:330px;">
+      <span class="l1">하..밥값만 날리고</span><span class="l1">소개팅 망했네.</span></div>
+  </div>
+
+  <!-- 컷3: 우클링 발견 (핑크방) -->
+  <div class="scene bg" id="s3" style="background-image:url('assets/bg_pinkroom.png');">
+    <img class="ctr" id="c3_sym" src="../../brand/png/symbol/symbol-twotone-512.png"
+         style="position:absolute;width:200px;top:740px;image-rendering:auto;">
+    <div class="spark" id="c3_sp1" style="left:340px;top:770px;">✦</div>
+    <div class="spark" id="c3_sp2" style="left:700px;top:810px;">✦</div>
+    <img class="spr ctr" id="c3_a" src="assets/clii_front.png" style="height:600px;top:1050px;">
+    <img class="spr ctr" id="c3_b" src="assets/clii_surprised.png" style="height:620px;top:1030px;opacity:0;">
+    <div class="cap big" id="c3_cap" style="top:340px;">
+      <span class="l1">그러다 발견한 👀</span>
+      <span class="l1"><span class="em">우클링 하루연애</span></span></div>
+  </div>
+
+  <!-- 추가컷: 놀람 말풍선 (핑크방) -->
+  <div class="scene bg" id="sx" style="background-image:url('assets/bg_pinkroom.png');">
+    <div class="bubble" id="cx_bub" style="top:380px;">
+      원데이클래스에서<br>취향이 맞는 사람들과<br>미팅을 할 수가 있다고?!</div>
+    <img class="spr ctr" id="cx_clii" src="assets/clii_surprised.png" style="height:780px;top:960px;">
+    <div class="bulb" id="cx_bulb" style="left:690px;top:960px;opacity:0;">💡</div>
+  </div>
+
+  <!-- 컷4: 우클링 하루연애중 (클래스, 동그란 블럭 자막) -->
+  <div class="scene bg" id="s4" style="background-image:url('assets/bg_class.png');">
+    <img class="spr ctr" id="c4_scene" src="assets/baking.png" style="width:920px;top:880px;">
+    <div class="capfill" id="c4_cap" style="top:360px;"><span class="pill">우클링 하루연애중 ...</span></div>
+  </div>
+
+  <!-- 컷5: 연애 시작 (핑크 하트) -->
+  <div class="scene bg" id="s5" style="background-image:url('assets/bg_class.png');">
+    <div class="pxheart" id="c5_heart" style="left:540px;top:700px;"></div>
+    <img class="spr ctr" id="c5_couple" src="assets/holdhands.png" style="width:720px;top:820px;">
+    <div class="cap big" id="c5_cap" style="top:400px;">
+      <span class="l1">우클링 덕분에</span><span class="l1">연애 시작!</span></div>
+  </div>
+
+  <!-- 컷6: 머그컵 -->
+  <div class="scene bg" id="s6" style="background-image:url('assets/bg_class.png');">
+    <img class="spr ctr" id="c6_scene" src="assets/mugs.png" style="width:800px;top:840px;">
+    <div class="cap big" id="c6_cap" style="top:430px;">머그컵은 덤✌️</div>
+  </div>
+
+  <!-- 컷7: CTA -->
+  <div class="scene bg" id="s7" style="background-image:url('assets/bg_field.png');">
+    <img class="spr ctr" id="c7_couple" src="assets/couple.png" style="width:720px;top:800px;">
+    <div class="cap big" id="c7_cap" style="top:360px;">
+      <span class="l1">소개팅은 망해도</span><span class="l1">머그컵은 남으니까</span></div>
+    <div class="cta" id="c7_btn" style="top:1470px;">신청은 프로필 링크에서</div>
+    <div class="badge" id="c7_badge" style="top:1660px;">우클링 하루연애 · 1회차 모집 중</div>
+  </div>
+
+</div>
+
+<script>
+const FPS=30, DUR=16.7;
+const S=(el)=>document.getElementById(el);
+const clamp01=x=>Math.max(0,Math.min(1,x));
+const lerp=(a,b,t)=>a+(b-a)*t;
+const ease=t=>t<0.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
+const easeOutBack=t=>{const c1=1.70158,c3=c1+1;return 1+c3*Math.pow(t-1,3)+c1*Math.pow(t-1,2);};
+function vis(t,s,e,f=0.3){ if(t<s||t>e)return 0; return Math.min(1,(t-s)/f,(e-t)/f,1); }
+function capIn(el,local){ const p=ease(clamp01(local/0.4)); el.style.opacity=p; el.style.transform=`translateY(${lerp(40,0,p)}px)`; }
+function ctrScale(el,s){ el.style.transform=`translateX(-50%) scale(${s})`; }
+
+const WIN={s1:[0,3.0],s2:[3.0,5.3],s3:[5.3,7.3],sx:[7.3,9.8],s4:[9.8,11.3],s5:[11.3,13.1],s6:[13.1,14.7],s7:[14.7,16.71]};
+
+function render(t){
+  for(const k in WIN){ S(k).style.opacity=vis(t,WIN[k][0],WIN[k][1]); }
+  // 컷1 — 카톡 pop, 카톡 후 clii 멘붕으로 전환
+  {const lt=t-WIN.s1[0]; const p=easeOutBack(clamp01(lt/0.5));
+   S('c1_kakao').style.transform=`scale(${lerp(0.9,1,clamp01(p))})`; S('c1_kakao').style.opacity=clamp01(lt/0.25);
+   const swap=clamp01((lt-1.0)/0.4);
+   S('c1_a').style.opacity=1-swap; S('c1_b').style.opacity=swap;
+   const bob=Math.sin(lt*4)*6;
+   S('c1_a').style.transform=`translateX(-50%) translateY(${bob}px)`;
+   S('c1_b').style.transform=`translateX(-50%) translateY(${bob}px)`;
+   capIn(S('c1_cap'),lt);}
+  // 컷2 — 한숨
+  {const lt=t-WIN.s2[0]; ctrScale(S('c2_clii'), lerp(0.94,1,ease(clamp01(lt/0.5)))); capIn(S('c2_cap'),lt);}
+  // 컷3 — U심볼 pop + 로고 뜨는 순간 clii 놀람으로 전환
+  {const lt=t-WIN.s3[0];
+   const psym=easeOutBack(clamp01((lt-0.15)/0.5));
+   S('c3_sym').style.transform=`translateX(-50%) translateY(${lerp(30,0,clamp01(psym))}px) scale(${clamp01(psym)})`;
+   S('c3_sym').style.opacity=clamp01((lt-0.15)/0.25);
+   [['c3_sp1',0],['c3_sp2',0.5]].forEach(([id,ph])=>{const pr=((lt+ph)%1.0); S(id).style.opacity=Math.sin(clamp01(pr)*Math.PI);});
+   const swap=clamp01((lt-0.5)/0.35);
+   S('c3_a').style.opacity=1-swap; S('c3_b').style.opacity=swap;
+   const bob=Math.sin(lt*3)*6;
+   S('c3_a').style.transform=`translateX(-50%) translateY(${bob}px)`;
+   S('c3_b').style.transform=`translateX(-50%) translateY(${bob}px)`;
+   capIn(S('c3_cap'),lt);}
+  // 추가컷 — 놀람 말풍선 pop + 캐릭터 들썩
+  {const lt=t-WIN.sx[0]; const pb=easeOutBack(clamp01(lt/0.4));
+   S('cx_bub').style.transform=`scale(${clamp01(pb)})`; S('cx_bub').style.opacity=clamp01(lt/0.22);
+   S('cx_clii').style.transform=`translateX(-50%) translateY(${Math.abs(Math.sin(lt*5))*-14}px)`;
+   // 머리 옆 전구: 살짝 늦게 pop + 반짝임
+   const bp=easeOutBack(clamp01((lt-1.0)/0.35));
+   S('cx_bulb').style.opacity=clamp01((lt-1.0)/0.2)*(0.65+0.35*Math.abs(Math.sin(lt*9)));
+   S('cx_bulb').style.transform=`scale(${clamp01(bp)})`;}
+  // 컷4·5·6
+  {const lt=t-WIN.s4[0]; ctrScale(S('c4_scene'), lerp(0.95,1,ease(clamp01(lt/0.6)))); capIn(S('c4_cap'),lt);}
+  {const lt=t-WIN.s5[0]; ctrScale(S('c5_couple'), lerp(0.94,1,ease(clamp01(lt/0.6))));
+   const ph=easeOutBack(clamp01((lt-0.4)/0.5)); S('c5_heart').style.opacity=clamp01((lt-0.4)/0.2);
+   S('c5_heart').style.transform=`translateX(-50%) scale(${clamp01(ph)*(1+Math.sin(Math.max(0,lt-0.9)*4)*0.06)})`;
+   capIn(S('c5_cap'),lt);}
+  {const lt=t-WIN.s6[0]; ctrScale(S('c6_scene'), lerp(0.95,1,ease(clamp01(lt/0.6)))); capIn(S('c6_cap'),lt);}
+  // 컷7 — CTA
+  {const lt=t-WIN.s7[0]; ctrScale(S('c7_couple'), lerp(0.94,1,ease(clamp01(lt/0.6)))); capIn(S('c7_cap'),lt);
+   const pb=ease(clamp01((lt-0.5)/0.35)); S('c7_btn').style.opacity=pb;
+   S('c7_btn').style.transform=`translateX(-50%) translateY(${lerp(28,0,pb)}px)`;
+   S('c7_badge').style.opacity=clamp01((lt-0.9)/0.3);}
+}
+window.__render=render; window.__DUR=DUR; window.__FPS=FPS;
+if(!window.__CAPTURE){ let start=null;
+  function loop(ts){ if(start==null)start=ts; render(((ts-start)/1000)%DUR); requestAnimationFrame(loop); }
+  requestAnimationFrame(loop);
+}
+</script>
+</body>
+</html>

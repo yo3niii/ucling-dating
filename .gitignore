@@ -7,3 +7,10 @@
 
 # 로그·임시
 *.log
+
+# 의존성
+insta/node_modules/
+
+# 릴스: 폐기된 실사 스톡(무거움, 픽셀 버전으로 대체)
+insta/reels/assets/stock/
+insta/reels/out/_frames_*/
