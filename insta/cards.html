@@ -63,8 +63,11 @@
   /* 도트 배경 무늬 */
   .dots { background-image: radial-gradient(var(--blush-deep) 4px, transparent 4px); background-size: 40px 40px; }
 
-  .cover { justify-content: center; align-items: flex-start; }
+  .cover { justify-content: center; align-items: center; }
   .cover .eyebrow { margin-bottom: 26px; }
+  /* 표지는 가운데 정렬 (왼쪽 정렬 규칙 덮어쓰기) */
+  .card.cover .title, .card.cover .cover-sub, .card.cover .eyebrow, .card.cover .intro { text-align: center; }
+  .card.cover .cta { align-self: center; }
   .head { margin-top: 30px; }
   .head .title { margin-bottom: 44px; }
 
@@ -94,6 +97,19 @@
 
   /* 굵은 제목 (표지·섹션 제목) */
   .title--bold { font-family: "Galmuri11", "Galmuri14"; font-weight: 700; }
+
+  /* 표지: 사람들(픽셀아트) 배경 + 가운데 타이틀 */
+  .people-cover { background: var(--blush); justify-content: center; align-items: center; padding: 0; position: relative; }
+  .cover-people { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: center; image-rendering: pixelated; }
+  .pc-text { position: relative; z-index: 2; text-align: center; transform: translateY(-30px); }
+  .pc-title {
+    font-family: "Galmuri14", "Galmuri11"; font-weight: 700;
+    font-size: 108px; line-height: 1.28; color: var(--plum);
+    text-shadow:
+      0 0 40px #ffedf2, 0 0 40px #ffedf2, 0 0 30px #ffedf2, 0 0 30px #ffedf2, 0 0 20px #ffedf2,
+      12px 12px 0 #ffedf2, -12px -12px 0 #ffedf2, 12px -12px 0 #ffedf2, -12px 12px 0 #ffedf2,
+      12px 0 0 #ffedf2, -12px 0 0 #ffedf2, 0 12px 0 #ffedf2, 0 -12px 0 #ffedf2;
+  }
 
   /* ── 세트 1 · 소개 : 연핑크 배경 ── */
   /* 정렬 통일: 세로 가운데, 글줄 왼쪽 */
@@ -208,8 +224,9 @@
     padding: 22px 28px;
   }
   .info .ico { font-size: 40px; flex: 0 0 auto; }
-  .info .k { font-weight: 700; }
-  .info .v { color: var(--plum-mute); }
+  /* 가독성: 라벨(신청 마감·매칭 안내 등)은 회색, 본문(값)은 검정 */
+  .info .k { font-weight: 700; color: var(--plum-mute); }
+  .info .v { color: var(--plum); }
   .set3 .cta { background: var(--white); color: var(--rose); box-shadow: 10px 10px 0 var(--rose-deep); margin-top: 48px; align-self: center; }
   .foot-note { margin-top: 24px; font-size: 30px; color: rgba(255,255,255,.9); text-align: center; }
 </style>
@@ -246,11 +263,12 @@
 <!-- ══════════ 세트 1 · 소개 (7장) ══════════ -->
 
 <!-- 1 표지 -->
-<section class="card set1 cover dots" data-name="01_소개_01">
+<section class="card set1 people-cover" data-name="01_소개_01">
   <img class="card__logo" src="assets/ucling-wordmark-round-rose.png" alt="우클링" />
-  <svg class="pxheart" width="120" height="103" style="margin-bottom:40px"><use href="#pxheart"/></svg>
-  <h1 class="title title--bold" style="font-size:92px">우클링<br />하루연애란?</h1>
-  <p class="cover-sub" style="font-size:50px">연프 나가보고<br />싶었던 적 있어?</p>
+  <img class="cover-people" src="assets/people.png" alt="" />
+  <div class="pc-text">
+    <h1 class="pc-title">우클링<br />하루연애</h1>
+  </div>
   <span class="page-num">1/4</span>
 </section>
 
@@ -298,12 +316,9 @@
 <!-- ══════════ 세트 2 · QnA (3장: 표지 + 2장) ══════════ -->
 
 <!-- 1 표지 (소개 표지와 동일한 레이아웃) -->
+<!-- QnA 표지: 배경+로고+페이지수만 (제목은 Figma에서) -->
 <section class="card set2 qna-bg cover" data-name="02_QnA_01">
   <img class="card__logo" src="assets/ucling-wordmark-round-rose.png" alt="우클링" />
-  <svg class="pxheart" width="120" height="103" style="margin-bottom:40px"><use href="#pxheart"/></svg>
-  <p class="eyebrow">우클링 하루연애</p>
-  <h1 class="title title--bold" style="font-size:200px; letter-spacing:0.1em">QnA</h1>
-  <p class="cover-sub">궁금한 거<br />다 모았어요</p>
   <span class="page-num">1/4</span>
 </section>
 
@@ -361,11 +376,13 @@
   <span class="page-num">4/4</span>
 </section>
 
-<!-- ══════════ 세트 3 · 1회차 안내 (1장) ══════════ -->
+<!-- ══════════ 세트 3 · 1회차 안내 (2장: 프로필링크판 / CTA버튼판) ══════════ -->
 
+<!-- 버전 1 : 프로필 링크 안내 O (오가닉 게시물용) -->
 <section class="card set3" data-name="03_안내_01">
   <img class="card__logo" src="assets/ucling-wordmark-round-white.png" alt="우클링" />
-  <h1 class="a3-title">
+  <!-- 제목은 Figma에서 얹음 (자리 유지 위해 숨김) -->
+  <h1 class="a3-title" style="visibility:hidden">
     <span class="sm">우클링 하루연애</span>
     <span class="lg">
       <svg class="lg-heart" width="60" height="51" aria-hidden="true"><use href="#pxheart"/></svg>
@@ -374,14 +391,36 @@
     </span>
   </h1>
   <ul class="info">
-    <li><span class="ico">📅</span><span><span class="k">신청 마감</span> · <span class="v">9/13(일) 23:59</span></span></li>
-    <li><span class="ico">💌</span><span><span class="k">매칭 안내</span> · <span class="v">9/15(화) DM</span></span></li>
-    <li><span class="ico">🕯</span><span><span class="k">클래스 진행</span> · <span class="v">9/18(금) ~ 9/20(일) 중 하루</span></span></li>
+    <li><span class="ico">📅</span><span><span class="k">신청 마감</span> · <span class="v">9/26(토) 23:59</span></span></li>
+    <li><span class="ico">💌</span><span><span class="k">매칭 안내</span> · <span class="v">9/28(월) DM</span></span></li>
+    <li><span class="ico">🕯</span><span><span class="k">클래스 진행</span> · <span class="v">10/2(금)·3(토)·4(일) 중 하루</span></span></li>
     <li><span class="ico">📍</span><span><span class="k">장소</span> · <span class="v">서울, 매칭 후 안내</span></span></li>
     <li><span class="ico">👥</span><span><span class="k">모집</span> · <span class="v">3:3 선착순, 정원 차면 마감</span></span></li>
   </ul>
   <span class="cta">신청은 프로필 링크에서</span>
-  <p class="foot-note">우클링은 수수료 없음, 클래스비만 직접 결제</p>
+</section>
+
+<!-- 버전 2 : 프로필 링크 안내 X (광고 CTA 버튼판 — 링크는 광고에서 붙임) -->
+<section class="card set3" data-name="03_안내_02">
+  <img class="card__logo" src="assets/ucling-wordmark-round-white.png" alt="우클링" />
+  <!-- 제목은 Figma에서 얹음 (자리 유지 위해 숨김) -->
+  <h1 class="a3-title" style="visibility:hidden">
+    <span class="sm">우클링 하루연애</span>
+    <span class="lg">
+      <svg class="lg-heart" width="60" height="51" aria-hidden="true"><use href="#pxheart"/></svg>
+      1회차 모집
+      <svg class="lg-heart" width="60" height="51" aria-hidden="true"><use href="#pxheart"/></svg>
+    </span>
+  </h1>
+  <ul class="info">
+    <li><span class="ico">📅</span><span><span class="k">신청 마감</span> · <span class="v">9/26(토) 23:59</span></span></li>
+    <li><span class="ico">💌</span><span><span class="k">매칭 안내</span> · <span class="v">9/28(월) DM</span></span></li>
+    <li><span class="ico">🕯</span><span><span class="k">클래스 진행</span> · <span class="v">10/2(금)·3(토)·4(일) 중 하루</span></span></li>
+    <li><span class="ico">📍</span><span><span class="k">장소</span> · <span class="v">서울, 매칭 후 안내</span></span></li>
+    <li><span class="ico">👥</span><span><span class="k">모집</span> · <span class="v">3:3 선착순, 정원 차면 마감</span></span></li>
+  </ul>
+  <!-- 목록 위치를 01과 동일하게 맞추기 위한 자리(안 보임) -->
+  <span class="cta" style="visibility:hidden">신청은 프로필 링크에서</span>
 </section>
 
 </body>
