@@ -18,6 +18,11 @@ const CONFIG = {
 
   // 완료 화면에서 유도할 우클링 인스타 주소.
   INSTAGRAM_URL: "https://www.instagram.com/ucling.official/",
+
+  // 구글 시트 자동수집(Apps Script Web App)의 /exec URL.
+  // "구글 시트 셋업"(SHEET-SETUP.md)에서 배포 후 나온 URL을 여기 붙인다.
+  // 비어 있으면 시트 전송을 건너뛴다 (이메일만 감). 시트 장애 시에도 신청은 막히지 않는다.
+  SHEET_ENDPOINT: "https://script.google.com/macros/s/AKfycbwtNgx84H7h5sXwMSUm2hs0vvPZcDK_ya8wdKGyvOLNm_4X4_YztNqNKXl7by-XYy5w/exec",
 };
 /* =============================================================== */
 
@@ -38,6 +43,7 @@ if (instaCta) instaCta.href = CONFIG.INSTAGRAM_URL;
    나중에 Apps Script / 백엔드로 바꿀 땐 이 함수 내부만 수정한다.
    성공하면 resolve, 실패하면 throw. */
 async function submitApplication(data) {
+  // 1차: Web3Forms (성공 게이트) — 이메일 알림. 여기서 실패하면 신청 실패로 본다.
   const payload = {
     access_key: CONFIG.WEB3FORMS_KEY,
     subject: `[우클링 하루연애] ${ROUND_LABEL} 신청 — ${data["닉네임"] || ""}`,
@@ -55,7 +61,32 @@ async function submitApplication(data) {
   if (!res.ok || !result.success) {
     throw new Error(result.message || "제출에 실패했습니다.");
   }
+
+  // 2차: 구글 시트 (베스트에포트) — 자동 수집. 실패해도 신청 흐름을 막지 않는다.
+  // access_key/subject 같은 Web3Forms 전용 필드는 빼고, 회차만 붙여서 보낸다.
+  sendToSheet({ 회차: ROUND_LABEL, ...data });
+
   return result;
+}
+
+/* 구글 시트로 한 줄 append (베스트에포트).
+   Apps Script 웹앱은 브라우저 CORS 프리플라이트를 처리 못 하므로,
+   프리플라이트가 없는 "심플 요청"(text/plain)으로 fire-and-forget 한다.
+   응답은 읽지 않는다 — 성공 판정은 Web3Forms 가 하고, 이메일 백업이 남는다. */
+function sendToSheet(payload) {
+  if (!CONFIG.SHEET_ENDPOINT) return; // URL 미설정 시 조용히 건너뜀
+  try {
+    fetch(CONFIG.SHEET_ENDPOINT, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify(payload),
+    }).catch(() => {
+      /* 시트 실패는 조용히 무시 — 이메일 백업이 있음 */
+    });
+  } catch (_) {
+    /* 시트 실패는 조용히 무시 */
+  }
 }
 
 /* ---------- 폼 검증 ---------- */
