@@ -1,0 +1,205 @@
+{
+  "topic": "그린플래그 vs 레드플래그",
+  "sectionName": "우클링 · 그린레드플래그",
+  "fileKey": "FXjqzRZXXDTgGLUnyFdWrS",
+  "frameSize": [1080, 1440],
+  "brandNote": "브랜드킷상 초록/빨강 배경·뱃지 색은 금지. 모든 카드 배경·뱃지·타이틀바는 rose(#e0356b)+흰글씨 / 배경 cream(#fff7f9)로 통일. 초록불/빨간불 구분은 오직 🟢/🚩 이모지와 'GREEN FLAG'/'RED FLAG' 뱃지 텍스트로만 표현한다. 본문=plum(#2b1b24), 캡션=plum-mute(#7a6570), 🌟인사이트=pink(#ff4d85) 카드당 1곳.",
+  "cards": [
+    {
+      "n": 1,
+      "template": "KITSCH_COVER",
+      "role": "표지 (사용자 지정 '키치 style' 표지)",
+      "coverStyle": {
+        "ref": "사용자가 제공한 '표지 키치한 style' 템플릿 이미지 기준",
+        "elements": [
+          "풀블리드 사진 자리(투명 영역, 우클링이 직접 채움) + 하단 핑크 그라데이션(blush→pink)",
+          "해시태그 pill 3개: 핑크(#ff4d85)/화이트 번갈아, 우상단 배치, 흰/핑크 글씨",
+          "픽셀 하트 3개(좌측): 핑크 채움 2 + 화이트 외곽선 1 — 기존 픽셀 감성 콜백",
+          "가운데 큰 제목 2줄: 흰색 + 핵심 단어 1개만 핑크(#ff4d85) 포인트",
+          "제목 아래 @핸들 중앙 정렬"
+        ],
+        "note": "표지는 이 키치 템플릿의 핑크 요소(하트·pill·포인트 단어)를 허용한다. 본문 카드(T03)는 계속 브랜드 엄격 규칙(핑크 1곳)을 지킨다."
+      },
+      "text": {
+        "title": "썸 탈까 말까?",
+        "titleAccentWord": "말까?",
+        "hashtagPills": ["#그린플래그", "#레드플래그", "#썸판별"],
+        "handle": "@ucling.official"
+      },
+      "imageSlots": [
+        { "note": "표지 배경 사진 자리 (풀블리드, 투명). 우클링이 직접 채움. gr_00_cover.jpg 권장", "empty": true }
+      ],
+      "recolor": {
+        "titleBase": "#ffffff",
+        "titleAccent": "#ff4d85",
+        "pill": "#ff4d85 / #ffffff 번갈아",
+        "pixelHeart": "#ff4d85 채움 + #ffffff 외곽선",
+        "gradient": "#ffedf2 → #ff4d85 (하단)",
+        "handle": "#ffffff"
+      }
+    },
+    {
+      "n": 2,
+      "template": "T03",
+      "role": "본문 - 그린플래그 (연락·약속)",
+      "text": {
+        "badge": "GREEN FLAG 🟢",
+        "subTop": "이런 사람이면 마음 놔도 돼요",
+        "title": "연락·약속에서 보이는 초록불",
+        "insight": "🌟 화려한 말보다, 약속을 지키는 사람이 진짜예요.",
+        "body": "🟢 답장이 빠르진 않아도, 늦으면 \"미안, 이제 봤어\" 한마디를 해줘요.\n🟢 다음에 뭐 하자는 약속을 자기가 먼저 꺼내요.\n🟢 만나기로 한 날은 웬만하면 안 미뤄요.\n🟢 \"잘 들어갔어?\"를 부담 없이 물어봐줘요.",
+        "hashtag": "#그린플래그 #썸초록불 #연락스타일 #약속",
+        "source": "",
+        "handle": "@ucling.official"
+      },
+      "imageSlots": [
+        { "note": "사진 자리 (510×570). 4개 초록불 항목 리스트용 이미지 비움", "empty": true },
+        { "note": "사진 자리 (410×570). 이미지 비움", "empty": true }
+      ],
+      "recolor": {
+        "badgeBg": "#e0356b",
+        "badgeText": "#ffffff",
+        "titleBar": "#e0356b",
+        "title": "#2b1b24",
+        "subTop": "#7a6570",
+        "body": "#2b1b24",
+        "caption": "#7a6570",
+        "bg": "#fff7f9",
+        "imagePlaceholder": "#ffedf2",
+        "accent": "#ff4d85 (🌟인사이트 헤드라인 1곳)"
+      },
+      "note": "카피 원문 '초록 톤 카드'는 브랜드 규칙상 무시. 배경/뱃지/타이틀바 전부 rose 유지. 초록불 표현은 뱃지 텍스트 'GREEN FLAG 🟢'와 본문 각 줄 앞 🟢 이모지로만.",
+      "overflowFix": "첫 줄이 큰따옴표 대사 포함 34자로 가장 길다. 타이틀 바 폭/본문 넘치면 첫 줄을 '🟢 답장이 늦어도 \"미안, 이제 봤어\" 한마디는 꼭 해줘요.'로 축약(의미 유지)."
+    },
+    {
+      "n": 3,
+      "template": "T03",
+      "role": "본문 - 그린플래그 (태도·배려)",
+      "text": {
+        "badge": "GREEN FLAG 🟢",
+        "subTop": "알아갈수록 편해지는 사람",
+        "title": "태도·배려에서 보이는 초록불",
+        "insight": "🌟 배려가 습관인 사람은, 연애해도 그대로예요.",
+        "body": "🟢 내 얘기를 기억했다가 다음에 슬쩍 다시 물어봐줘요.\n🟢 식당 정할 때 \"너는 뭐 좋아해?\"를 먼저 물어봐요.\n🟢 헤어질 때 나 가는 방향까지 챙겨줘요.\n🟢 사소한 거에도 \"고마워\"를 아끼지 않아요.",
+        "hashtag": "#그린플래그 #배려 #다정함 #썸초록불",
+        "source": "",
+        "handle": "@ucling.official"
+      },
+      "imageSlots": [
+        { "note": "사진 자리 (510×570). 4개 초록불 항목 리스트용 이미지 비움", "empty": true },
+        { "note": "사진 자리 (410×570). 이미지 비움", "empty": true }
+      ],
+      "recolor": {
+        "badgeBg": "#e0356b",
+        "badgeText": "#ffffff",
+        "titleBar": "#e0356b",
+        "title": "#2b1b24",
+        "subTop": "#7a6570",
+        "body": "#2b1b24",
+        "caption": "#7a6570",
+        "bg": "#fff7f9",
+        "imagePlaceholder": "#ffedf2",
+        "accent": "#ff4d85 (🌟인사이트 헤드라인 1곳)"
+      },
+      "note": "카피 원문 '초록 톤 카드' 무시, 전부 rose. 초록불 표현은 뱃지 'GREEN FLAG 🟢' + 본문 줄머리 🟢 이모지로만.",
+      "overflowFix": "첫 줄 25자로 여유 있음. 본문 폭 넘치면 첫 줄을 '🟢 내 얘기를 기억했다가 다음에 다시 물어봐줘요.'로 축약."
+    },
+    {
+      "n": 4,
+      "template": "T03",
+      "role": "본문 - 레드플래그 (연락·성의)",
+      "text": {
+        "badge": "RED FLAG 🚩",
+        "subTop": "나만 진심인 것 같다면 체크",
+        "title": "연락·성의에서 보이는 빨간불",
+        "insight": "🌟 노력이 한쪽으로만 기울면, 그건 썸이 아니에요.",
+        "body": "🚩 연락은 늘 내가 먼저, 답장은 늘 늦어요.\n🚩 약속은 항상 \"언제 한번 보자\"에서 멈춰요.\n🚩 만나기로 해놓고 당일에 자주 미뤄요.\n🚩 기분 좋을 때만 다정하고, 아닐 땐 조용히 사라져요.",
+        "hashtag": "#레드플래그 #썸빨간불 #연락문제 #밀당아님",
+        "source": "",
+        "handle": "@ucling.official"
+      },
+      "imageSlots": [
+        { "note": "사진 자리 (510×570). 4개 빨간불 경고 항목 리스트용 이미지 비움", "empty": true },
+        { "note": "사진 자리 (410×570). 이미지 비움", "empty": true }
+      ],
+      "recolor": {
+        "badgeBg": "#e0356b",
+        "badgeText": "#ffffff",
+        "titleBar": "#e0356b",
+        "title": "#2b1b24",
+        "subTop": "#7a6570",
+        "body": "#2b1b24",
+        "caption": "#7a6570",
+        "bg": "#fff7f9",
+        "imagePlaceholder": "#ffedf2",
+        "accent": "#ff4d85 (🌟인사이트 헤드라인 1곳)"
+      },
+      "note": "카피 원문 '빨강 톤 카드' 무시, 전부 rose. 빨간불 표현은 뱃지 'RED FLAG 🚩' + 본문 줄머리 🚩 이모지로만. 뱃지가 rose라 GREEN 카드와 색이 같으므로, 반드시 뱃지 텍스트로 구분되게 크게(≥16px bold).",
+      "overflowFix": "마지막 줄 27자로 가장 길다. 본문 폭 넘치면 '🚩 기분 좋을 때만 다정하고, 아니면 조용히 사라져요.'로 축약."
+    },
+    {
+      "n": 5,
+      "template": "T03",
+      "role": "본문 - 레드플래그 (존중·신뢰)",
+      "text": {
+        "badge": "RED FLAG 🚩",
+        "subTop": "설렘보다 먼저 봐야 할 신호",
+        "title": "존중·신뢰에서 보이는 빨간불",
+        "insight": "🌟 설렘은 잠깐이지만, 존중 없는 사이는 계속 아파요.",
+        "body": "🚩 내 취향이나 생각을 은근히 무시해요.\n🚩 약속이나 한 말을 자꾸 바꾸고 딴말을 해요.\n🚩 다른 사람들 앞에서 나를 툭툭 깎아내려요.\n🚩 질투를 핑계로 내 일상을 통제하려 들어요.",
+        "hashtag": "#레드플래그 #존중 #신뢰 #썸빨간불",
+        "source": "",
+        "handle": "@ucling.official"
+      },
+      "imageSlots": [
+        { "note": "사진 자리 (510×570). 4개 빨간불 경고 항목 리스트용 이미지 비움", "empty": true },
+        { "note": "사진 자리 (410×570). 이미지 비움", "empty": true }
+      ],
+      "recolor": {
+        "badgeBg": "#e0356b",
+        "badgeText": "#ffffff",
+        "titleBar": "#e0356b",
+        "title": "#2b1b24",
+        "subTop": "#7a6570",
+        "body": "#2b1b24",
+        "caption": "#7a6570",
+        "bg": "#fff7f9",
+        "imagePlaceholder": "#ffedf2",
+        "accent": "#ff4d85 (🌟인사이트 헤드라인 1곳)"
+      },
+      "note": "카피 원문 '빨강 톤 카드' 무시, 전부 rose. 빨간불 표현은 뱃지 'RED FLAG 🚩' + 본문 줄머리 🚩 이모지로만.",
+      "overflowFix": "둘째 줄 24자로 가장 길다. 본문 폭 넘치면 '🚩 약속이나 한 말을 자꾸 바꾸고 딴말을 해요.' 유지, 넘치면 '🚩 한 말을 자꾸 바꾸고 딴말을 해요.'로 축약."
+    },
+    {
+      "n": 6,
+      "template": "T06",
+      "role": "CTA/마무리",
+      "text": {
+        "badge": "하루연애",
+        "subTop": "신호 좋은 사람, 오늘 하루 만나볼래요?",
+        "cta": "초록불인 사람, 어디서 만나요?",
+        "body": "신호 판별은 결국, 좋은 사람을 만나야 써먹어요.\n원데이 클래스에서 3:3으로 가볍게 만나봐요.\n같이 뭔가 만들다 보면 초록불인지 금방 보이거든요.\n이 카드는 저장하고, 썸 고민하는 친구는 태그해요.",
+        "profile": "@ucling.official · 우클링 하루연애 1회차 모집 중",
+        "insight": "🌟 신청은 프로필 링크에서.",
+        "hashtag": "#우클링 #하루연애 #소개팅신청 #원데이클래스 #연프감성",
+        "handle": "@ucling.official"
+      },
+      "imageSlots": [
+        { "note": "CTA 배경 사진 자리 (풀블리드). 프로필 링크 유도. 우클링 로고·심볼 자리 비움", "empty": true }
+      ],
+      "recolor": {
+        "badgeBg": "#e0356b",
+        "badgeText": "#ffffff",
+        "cta": "#2b1b24",
+        "subTop": "#7a6570",
+        "body": "#2b1b24",
+        "profile": "#7a6570",
+        "caption": "#7a6570",
+        "bg": "#fff7f9",
+        "imagePlaceholder": "#ffedf2",
+        "accent": "#ff4d85 (핵심 CTA '신청은 프로필 링크에서' 1곳)"
+      },
+      "overflowFix": "본문 4줄. 넘치면 3번째 줄을 '같이 만들다 보면 초록불인지 금방 보여요.'로 축약."
+    }
+  ]
+}

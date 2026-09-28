@@ -5,8 +5,14 @@
 .vscode/
 .idea/
 
+# 개인 하네스(Claude Code 스킬·에이전트) — 인수인계 레포에 넣지 않음
+.claude/
+
 # 로그·임시
 *.log
+
+# 오피스 잠금 임시파일 (예: ~$1회차_매칭.xlsx)
+~$*
 
 # 의존성
 insta/node_modules/

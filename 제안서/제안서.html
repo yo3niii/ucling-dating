@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>우클링 하루연애 제휴 제안서 v2</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+<style>
+  :root {
+    --rose: #e0356b;
+    --rose-deep: #b82a58;
+    --rose-soft: #f591ad;
+    --pink: #ff4d85;
+    --blush: #ffedf2;
+    --blush-deep: #ffdce8;
+    --cream: #fff7f9;
+    --white: #ffffff;
+    --plum: #2b1b24;
+    --plum-mute: #7a6570;
+    --line: #f0dbe2;
+    --line-strong: #e6c3ce;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--white); }
+  body {
+    font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    color: var(--plum);
+    -webkit-font-smoothing: antialiased;
+    font-size: 9.4pt;
+    line-height: 1.58;
+    word-break: keep-all;
+  }
+
+  @page { size: A4; margin: 0; }
+
+  .page {
+    width: 210mm;
+    height: 297mm;
+    overflow: hidden;
+    padding: 8mm 16mm 6mm;
+    margin: 0 auto;
+    background: var(--white);
+    position: relative;
+    display: flex; flex-direction: column;
+  }
+  .page + .page { page-break-before: always; }
+
+  /* ── 상단 바 ── */
+  .topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-bottom: 3mm; border-bottom: 1px solid var(--line);
+    margin-bottom: 4mm;
+  }
+  .topbar img { height: 20px; width: auto; }
+  .topbar .kicker {
+    font-size: 8pt; letter-spacing: 0.24em; font-weight: 700;
+    color: var(--rose);
+  }
+
+  /* ── 하단 바 ── */
+  .footbar {
+    margin-top: auto; padding-top: 3mm; border-top: 1px solid var(--line);
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 7.8pt; color: var(--plum-mute); letter-spacing: 0.02em;
+  }
+  .footbar b { color: var(--rose-deep); font-weight: 700; }
+
+  /* ── 표지 히어로 ── */
+  .hero { margin-bottom: 3mm; }
+  .hero .eyebrow {
+    display: inline-flex; align-items: center; gap: 2mm;
+    font-size: 8.5pt; font-weight: 700; color: var(--rose);
+    letter-spacing: 0.06em; margin-bottom: 3.5mm;
+  }
+  .hero .eyebrow::before {
+    content: ""; width: 7mm; height: 2px; background: var(--rose);
+  }
+  .hero h1 {
+    font-size: 20pt; font-weight: 800; line-height: 1.28; letter-spacing: -0.02em;
+    color: var(--plum);
+  }
+  .hero h1 .heart { color: var(--pink); }
+  .hero .sub {
+    margin-top: 2.5mm; font-size: 9.6pt; color: var(--plum-mute); line-height: 1.55;
+  }
+
+  /* 제안 개요 표 */
+  .summary {
+    margin-top: 2.5mm;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    border: 1px solid var(--line-strong); border-radius: 8px; overflow: hidden;
+  }
+  .summary .cell {
+    padding: 3mm 3.6mm; border-right: 1px solid var(--line);
+    background: var(--cream);
+  }
+  .summary .cell:last-child { border-right: 0; }
+  .summary .k {
+    font-size: 7.6pt; font-weight: 700; color: var(--rose-deep);
+    letter-spacing: 0.06em; margin-bottom: 1mm;
+  }
+  .summary .v { font-size: 9.6pt; font-weight: 700; color: var(--plum); line-height: 1.4; }
+  .summary .v small { display: block; font-size: 8pt; font-weight: 500; color: var(--plum-mute); margin-top: 0.6mm; }
+
+  /* ── 섹션 헤더 ── */
+  section { margin-bottom: 2.4mm; break-inside: avoid; }
+  .sec-head {
+    display: grid; grid-template-columns: 13mm 1fr; column-gap: 3.5mm;
+    align-items: end;
+    padding-bottom: 1.6mm; margin-bottom: 1.9mm;
+    border-bottom: 1.5px solid var(--plum);
+    position: relative;
+  }
+  .sec-head::after {
+    content: ""; position: absolute; left: 0; bottom: -1.5px;
+    width: 13mm; height: 1.5px; background: var(--rose);
+  }
+  .sec-head .num {
+    font-size: 21pt; font-weight: 800; color: var(--rose);
+    line-height: 1; letter-spacing: -0.03em;
+    font-variant-numeric: tabular-nums;
+  }
+  .sec-head .titles { padding-bottom: 0.4mm; }
+  .sec-head .en {
+    font-size: 7.4pt; font-weight: 700; color: var(--plum-mute);
+    letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 0.8mm;
+  }
+  .sec-head h2 {
+    font-size: 13pt; font-weight: 800; color: var(--plum); line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+
+  p { margin-bottom: 1.6mm; }
+  .muted { color: var(--plum-mute); }
+  .small { font-size: 8.6pt; }
+  .lead { font-size: 10pt; font-weight: 700; color: var(--plum); }
+
+  /* 인용 */
+  .quote {
+    border-left: 3px solid var(--rose); background: var(--cream);
+    padding: 2mm 4mm; margin: 0.5mm 0 2.4mm; border-radius: 0 6px 6px 0;
+    font-size: 10.4pt; font-weight: 700; color: var(--rose-deep); line-height: 1.5;
+  }
+
+  /* 2단 */
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; }
+
+  /* 혜택 카드 */
+  .benefits { display: grid; grid-template-columns: 1fr 1fr; gap: 2.4mm; }
+  .benefit {
+    background: var(--cream); border: 1px solid var(--line-strong); border-radius: 8px;
+    padding: 2.8mm 4mm 3mm; position: relative;
+    border-top: 3px solid var(--rose);
+  }
+  .benefit .idx {
+    font-size: 8pt; font-weight: 800; color: var(--rose); letter-spacing: 0.08em;
+    margin-bottom: 1.2mm;
+  }
+  .benefit h3 { font-size: 10.4pt; font-weight: 800; color: var(--plum); margin-bottom: 1.2mm; line-height: 1.35; }
+  .benefit p { font-size: 8.7pt; color: var(--plum); margin: 0; line-height: 1.5; }
+
+  /* 체크 리스트 */
+  ul.ticks { list-style: none; }
+  ul.ticks li { position: relative; padding-left: 5.5mm; margin-bottom: 2mm; }
+  ul.ticks li::before {
+    content: ""; position: absolute; left: 0; top: 2.3mm;
+    width: 2.1mm; height: 2.1mm; border-radius: 1px;
+    background: var(--rose); transform: rotate(45deg);
+  }
+  ul.ticks li b { font-weight: 700; color: var(--plum); }
+
+  /* 진행 단계 */
+  ol.steps { list-style: none; counter-reset: s; position: relative; }
+  ol.steps::before {
+    content: ""; position: absolute; left: 2.6mm; top: 3mm; bottom: 3mm;
+    width: 1px; background: var(--line-strong);
+  }
+  ol.steps li { position: relative; padding-left: 9mm; margin-bottom: 1.5mm; }
+  ol.steps li::before {
+    counter-increment: s; content: counter(s);
+    position: absolute; left: 0; top: 0.3mm;
+    width: 5.3mm; height: 5.3mm; border-radius: 50%;
+    background: var(--rose); color: var(--white);
+    font-size: 8pt; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+  }
+  ol.steps li .t { font-weight: 700; color: var(--plum); }
+
+  /* 요청 사항 표 */
+  table.req { width: 100%; border-collapse: collapse; }
+  table.req th, table.req td {
+    text-align: left; vertical-align: top; padding: 1.6mm 3mm;
+    border-bottom: 1px solid var(--line); font-size: 9.2pt; line-height: 1.5;
+  }
+  table.req th {
+    width: 34mm; font-weight: 800; color: var(--rose-deep);
+    background: var(--cream);
+  }
+  table.req tr:last-child th, table.req tr:last-child td { border-bottom: 0; }
+  table.req { border: 1px solid var(--line-strong); border-radius: 8px; overflow: hidden; }
+  table.req .small { display: block; margin-top: 0.6mm; }
+
+  /* 참고 박스 */
+  .note {
+    background: var(--cream); border: 1px solid var(--line); border-radius: 8px;
+    padding: 2.4mm 4.2mm; font-size: 8.8pt; color: var(--plum-mute); line-height: 1.5;
+    margin-top: 2mm;
+  }
+  .note b { color: var(--plum); }
+
+  /* 연락 */
+  .contact {
+    background: var(--blush); border-radius: 10px;
+    padding: 3mm 5.5mm; margin-top: 1mm;
+    display: grid; grid-template-columns: 0.8fr 1fr 1.4fr 1.1fr; gap: 2mm 5mm; align-items: center;
+  }
+  .contact .lead-txt { font-size: 11.5pt; font-weight: 800; color: var(--plum); grid-column: 1 / -1; margin-bottom: 0.5mm; }
+  .contact .row { font-size: 9.6pt; color: var(--plum); }
+  .contact .row .k { display: block; font-size: 7.6pt; color: var(--rose-deep); font-weight: 700; letter-spacing: 0.06em; margin-bottom: 0.4mm; }
+  .contact .row .fill { font-weight: 700; }
+  .sign { margin-top: 1.6mm; text-align: right; font-size: 9pt; color: var(--plum-mute); }
+</style>
+</head>
+<body>
+
+<!-- ══════════════ PAGE 1 ══════════════ -->
+<div class="page">
+  <div class="topbar">
+    <img src="wordmark-twotone-1600.png" alt="우클링" />
+    <span class="kicker">PARTNERSHIP PROPOSAL</span>
+  </div>
+
+  <div class="hero">
+    <div class="eyebrow">원데이 클래스 제휴 제안</div>
+    <h1>우클링 하루연애 <span class="heart">♥</span><br />단체 클래스 제휴 제안서</h1>
+    <div class="sub">원데이 클래스에서 3:3 소개팅을 진행하는 프로그램입니다. 모집과 단체 예약은 우클링이 전담하며, 클래스에서는 평소와 동일하게 수업만 진행해 주시면 됩니다.</div>
+
+    <div class="summary">
+      <div class="cell"><div class="k">제안 형태</div><div class="v">단체 예약 1회차<small>3:3 소개팅 프로그램</small></div></div>
+      <div class="cell"><div class="k">참가 인원</div><div class="v">6명 (남 3 · 여 3)<small>회차별 조정 가능</small></div></div>
+      <div class="cell"><div class="k">모객 · 홍보</div><div class="v">우클링 전담<small>인스타그램 · 메타 광고</small></div></div>
+      <div class="cell"><div class="k">수업료 결제</div><div class="v">수업 전 선입금<small>매출 선확보 · 단체가 협의 가능</small></div></div>
+    </div>
+  </div>
+
+  <div class="cols">
+    <section>
+      <div class="sec-head">
+        <div class="num">01</div>
+        <div class="titles"><div class="en">About Us</div><h2>우클링 팀 소개</h2></div>
+      </div>
+      <p>우클링은 <b>‘우리들의 클래스 링크’</b>를 뜻하는 원데이 클래스 예약 플랫폼으로, 클래스를 매개로 다양한 만남을 이어주는 서비스입니다.</p>
+      <p>과학기술정보통신부 지원 <b>AI·SW 마에스트로</b> 개발팀이 운영하며, <b>11월 플랫폼 공식 출시</b>에 앞서 오프라인 프로그램 <b>‘우클링 하루연애’</b>를 먼저 진행합니다.</p>
+    </section>
+
+    <section>
+      <div class="sec-head">
+        <div class="num">02</div>
+        <div class="titles"><div class="en">Program</div><h2>우클링 하루연애란</h2></div>
+      </div>
+      <div class="quote">연애 프로그램에 나가보고 싶은 20대의 로망을, 원데이 클래스에서 가볍게.</div>
+      <p>3:3으로 모인 남녀가 소개팅 자리 대신 <b>원데이 클래스를 함께 수강하며</b> 자연스럽게 가까워지는 프로그램입니다.
+        함께 만들고 움직이는 과정에서 대화가 편하게 이어지고, 직접 만든 결과물이 남아 참가자의 부담이 적습니다.</p>
+    </section>
+  </div>
+
+  <section>
+    <div class="sec-head">
+      <div class="num">03</div>
+      <div class="titles"><div class="en">Proposal</div><h2>제안 내용</h2></div>
+    </div>
+    <p class="lead">귀하의 클래스에서 ‘우클링 하루연애’ 한 회차를 함께 진행하고자 합니다.</p>
+    <p>현재 <b>1회차 참가자를 모집 중</b>이며, 해당 회차 클래스는 <b>10월 초 진행 예정</b>입니다.</p>
+    <p>우클링이 참가자 <b>3:3, 총 6명</b>을 직접 모집하여 <b>단체로 예약</b>합니다.
+      클래스에서는 별도의 모객 부담 없이 평소와 동일하게 수업만 진행해 주시면 됩니다.
+      <span class="muted small">현재 3:3(6명) 기준이며, 회차에 따라 인원은 조정될 수 있습니다.</span></p>
+    <p class="muted small" style="margin-top:1.2mm;">제휴 수수료는 수업 종료 후 선입금된 수업료 합계의 10%를 후불로 정산하는 조건이며, 확정 단체 예약에 한해 발생합니다. 별도의 입점비·광고비는 없습니다.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="num">04</div>
+      <div class="titles"><div class="en">Benefits</div><h2>클래스에 드리는 혜택</h2></div>
+    </div>
+    <div class="benefits">
+      <div class="benefit">
+        <div class="idx">BENEFIT 1</div>
+        <h3>모객·마케팅 비용 0원, 우클링이 전담합니다</h3>
+        <p>인스타그램 콘텐츠와 메타(인스타그램·페이스북) 광고로 참가자를 모집합니다. 별도의 입점비·광고비 없이, 클래스에서는 홍보하실 필요가 없습니다.</p>
+      </div>
+      <div class="benefit">
+        <div class="idx">BENEFIT 2</div>
+        <h3>확정된 6인 단체 예약, 수업료는 선입금</h3>
+        <p>참가자가 수업 전 수업료를 먼저 입금하므로 노쇼 부담 없이 매출을 먼저 확보하실 수 있습니다. 날짜·시간은 한산한 시간대에 맞춰 협의합니다.</p>
+      </div>
+      <div class="benefit">
+        <div class="idx">BENEFIT 3</div>
+        <h3>현장 사진·후기가 우클링 채널에 노출됩니다</h3>
+        <p>우클링 인스타그램과 출시 예정 플랫폼에 클래스가 소개되어, 20대 참가자층을 대상으로 자연스러운 홍보 효과를 기대하실 수 있습니다.</p>
+      </div>
+      <div class="benefit">
+        <div class="idx">BENEFIT 4</div>
+        <h3>우클링 플랫폼 입점 우대</h3>
+        <p>먼저 함께해 주신 클래스는 11월 플랫폼 공식 출시 시 수수료 부담 없이 입점하실 수 있도록 우대해 드립니다. (07 참고)</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="footbar">
+    <span><b>우클링</b> 하루연애 제휴 제안서</span>
+    <span>1 / 2</span>
+  </div>
+</div>
+
+<!-- ══════════════ PAGE 2 ══════════════ -->
+<div class="page">
+  <div class="topbar">
+    <img src="wordmark-twotone-1600.png" alt="우클링" />
+    <span class="kicker">PARTNERSHIP PROPOSAL</span>
+  </div>
+
+  <section>
+    <div class="sec-head">
+      <div class="num">05</div>
+      <div class="titles"><div class="en">Process</div><h2>진행 방식</h2></div>
+    </div>
+    <ol class="steps">
+      <li><span class="t">참가자 모집</span> — 우클링이 인스타그램과 광고를 통해 참가자를 모집합니다.</li>
+      <li><span class="t">일정 협의</span> — 참가자들의 선호 시간대가 모이면 <b>클래스와 협의하여 날짜·시간을 확정</b>합니다.
+        <span class="muted small">(단체를 먼저 구성한 뒤 진행하기 위해 날짜를 사전에 확정하지 않습니다.)</span></li>
+      <li><span class="t">단체 예약</span> — 우클링이 <b>6인 단체 예약</b>을 진행하고, 확정된 참가자 명단(닉네임 기준)을 사전에 전달드립니다.</li>
+      <li><span class="t">당일 진행</span> — 참가자들이 각자 방문하여 클래스를 함께 수강하며, <b>수업료는 수업 전 참가자가 각자 선입금</b>합니다.</li>
+      <li><span class="t">후기 공유</span> — 수업 후 참가자 후기를 수집하여 우클링 채널에 소개합니다.</li>
+      <li><span class="t">정산</span> — 수업 종료 후, 선입금된 수업료 합계의 10%를 우클링으로 후불 정산해 주시면 됩니다.</li>
+    </ol>
+    <div class="note">
+      <b>당일 현장에는 운영진이 상주하지 않습니다.</b> 참가자 모집·안내·연락은 행사 전 우클링이 운영자가 포함된
+      오픈채팅 등으로 모두 진행합니다. 클래스에서는 확정된 6인 단체 예약을 받으시는 것과 동일하게 진행하시면 되며,
+      참가자 연락처를 별도로 받거나 관리하실 필요가 없습니다.
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="num">06</div>
+      <div class="titles"><div class="en">Request</div><h2>클래스에 요청드리는 사항</h2></div>
+    </div>
+    <table class="req">
+      <tr><th>수용 가능 여부</th><td>6인(3:3)을 함께 받아주실 수 있는 클래스 및 시간대 확인</td></tr>
+      <tr><th>단체 요금</th><td>단체(6인) 기준 요금 안내<span class="small muted">단체가가 별도로 있으시면 알려주시기 바랍니다. 수업료는 참가자가 수업 전 각자 선입금합니다.</span></td></tr>
+      <tr><th>예약금</th><td>예약금 정책이 있으시면 별도 협의를 통해 정하겠습니다.</td></tr>
+      <tr><th>정산</th><td>수업 종료 후 선입금 수업료 합계의 10%를 우클링으로 후불 정산<span class="small muted">확정 단체 예약에 한해 발생하며, 정산 방식은 협의하여 정하겠습니다.</span></td></tr>
+      <tr><th>좌석 배치</th><td>2인 1테이블 형태로 자리가 나뉘는 클래스의 경우, 남녀가 짝으로 앉도록 배치를 요청드립니다.</td></tr>
+      <tr><th>진행 분위기</th><td>소개팅 자리인 만큼, 지나치게 인위적이지 않게 참가자들이 자연스럽게 어울릴 수 있는 분위기로 진행해 주시기를 부탁드립니다.</td></tr>
+      <tr><th>촬영·게시 동의</th><td>홍보 콘텐츠 활용을 위한 현장 사진·후기 촬영 및 게시 동의</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="num">07</div>
+      <div class="titles"><div class="en">Ucling Platform</div><h2>우클링 플랫폼</h2></div>
+    </div>
+    <p>우클링 플랫폼은 <b>11월 공식 출시 예정</b>이며, ‘하루연애’는 우클링 플랫폼을 처음 알리기 위한 오프라인 프로그램입니다.
+      이번에 먼저 함께해 주신 클래스는 플랫폼 공식 출시 시 <b>수수료 부담 없이 입점하실 수 있도록 우대</b>해 드리며,
+      이번 협업이 앞으로 꾸준한 예약으로 이어지기를 기대합니다.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="num">08</div>
+      <div class="titles"><div class="en">Next Step</div><h2>다음 단계</h2></div>
+    </div>
+    <p>회신 주시면 가능한 일정과 인원부터 조율하겠습니다. 궁금한 점은 언제든 문의해 주시기 바랍니다.</p>
+    <div class="contact">
+      <span class="lead-txt">함께해 주시기를 기다리겠습니다 🌷</span>
+      <span class="row"><span class="k">담당</span><span class="fill" id="c-name">[담당자명]</span></span>
+      <span class="row"><span class="k">연락처</span><span class="fill" id="c-tel">[연락처]</span></span>
+      <span class="row"><span class="k">인스타그램</span><span class="fill" id="c-insta">[@인스타아이디]</span></span>
+      <span class="row"><span class="k">이메일</span><span class="fill" id="c-mail">[이메일]</span></span>
+    </div>
+    <div class="sign">검토해 주셔서 감사합니다. — 우클링 팀 드림</div>
+  </section>
+
+  <div class="footbar">
+    <span><b>우클링</b> 하루연애 제휴 제안서</span>
+    <span>2 / 2</span>
+  </div>
+</div>
+
+<script>
+  // ▼▼▼ 보내기 전 연락처만 채우면 모든 업체에 그대로 사용할 수 있습니다 ▼▼▼
+  const CONFIG = {
+    contactName: "박서연",
+    contact: "010-5742-7781",
+    email: "ucling.official@gmail.com",
+    insta: "@ucling.official",
+  };
+  // ▲▲▲ 여기까지 ▲▲▲
+
+  const set = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+  set("c-name", CONFIG.contactName);
+  set("c-tel", CONFIG.contact);
+  set("c-mail", CONFIG.email);
+  set("c-insta", CONFIG.insta);
+</script>
+</body>
+</html>

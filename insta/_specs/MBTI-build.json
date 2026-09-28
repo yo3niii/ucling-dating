@@ -1,0 +1,195 @@
+{
+  "topic": "MBTI별 소개팅 유형",
+  "sectionName": "우클링 · MBTI별 소개팅 유형",
+  "fileKey": "FXjqzRZXXDTgGLUnyFdWrS",
+  "frameSize": [1080, 1440],
+  "cards": [
+    {
+      "n": 1,
+      "template": "T01",
+      "role": "표지",
+      "text": {
+        "badge": "연애 TMI",
+        "subTop": "MBTI별 소개팅에서 나오는 모습",
+        "title": "내 소개팅 모드는?",
+        "body": "첫 만남 앞에서 우리는 다 조금씩 달라져요.\n긴장하거나, 신나거나, 갑자기 진지해지거나.\n16가지 중에 내 모습은 어디쯤일까요?",
+        "hashtag": "#MBTI소개팅 #소개팅유형 #연애MBTI #하루연애",
+        "source": "",
+        "handle": "@ucling_dating"
+      },
+      "imageSlots": [
+        { "note": "표지 배경 사진 자리 (풀블리드). 우클링 로고 자리도 비움", "empty": true }
+      ],
+      "recolor": {
+        "badgeBg": "#e0356b",
+        "badgeText": "#ffffff",
+        "title": "#2b1b24",
+        "subTop": "#7a6570",
+        "body": "#2b1b24",
+        "caption": "#7a6570",
+        "bg": "#fff7f9",
+        "imagePlaceholder": "#ffedf2",
+        "accent": "#ff4d85 (타이틀 '?' 또는 훅 문구 1곳)"
+      }
+    },
+    {
+      "n": 2,
+      "template": "T03",
+      "role": "본문 - 분석가형 NT",
+      "text": {
+        "badge": "분석가형 NT",
+        "subTop": "INTJ · INTP · ENTJ · ENTP",
+        "title": "머리로 먼저 재는 사람들",
+        "insight": "🌟 재는 것 같아도, 마음 정하면 제일 확실한 쪽이에요.",
+        "body": "INTJ — 3초 만에 상대를 분석 완료, 근데 표정엔 안 나와요.\nINTP — 대화는 재밌는데 다음 약속은 자기가 안 잡아요.\nENTJ — \"그래서 우리 다음에 뭐 할까요?\" 벌써 계획 다 짜둠.\nENTP — 아무 주제나 던져도 티키타카 만렙, 심심할 틈이 없어요.",
+        "hashtag": "#INTJ #INTP #ENTJ #ENTP #분석가형",
+        "source": "",
+        "handle": "@ucling_dating"
+      },
+      "imageSlots": [
+        { "note": "사진 자리 (510×570). 4분할 카드용 이미지 비움", "empty": true },
+        { "note": "사진 자리 (410×570). 이미지 비움", "empty": true }
+      ],
+      "recolor": {
+        "badgeBg": "#e0356b",
+        "badgeText": "#ffffff",
+        "titleBar": "#e0356b",
+        "title": "#2b1b24",
+        "subTop": "#7a6570",
+        "body": "#2b1b24",
+        "caption": "#7a6570",
+        "bg": "#fff7f9",
+        "imagePlaceholder": "#ffedf2",
+        "accent": "#ff4d85 (🌟인사이트 헤드라인 1곳)"
+      },
+      "overflowFix": "본문 4줄이 각 30~34자로 길다. 넘치면 ENTP를 '아무 주제나 던져도 티키타카 만렙, 안 심심해요.'로 축약(의미 유지). ENTJ 큰따옴표 대사가 길면 '벌써 다음 계획까지 다 짜둠.'로 축약."
+    },
+    {
+      "n": 3,
+      "template": "T03",
+      "role": "본문 - 외교관형 NF",
+      "text": {
+        "badge": "외교관형 NF",
+        "subTop": "INFJ · INFP · ENFJ · ENFP",
+        "title": "마음이 먼저 움직이는 사람들",
+        "insight": "🌟 진심이 얼굴에 다 드러나는 게 이 그룹의 매력이에요.",
+        "body": "INFJ — 말수는 적지만 상대 기분은 다 읽고 있어요.\nINFP — 눈 마주치면 설레서 딴 데 보는 거, 관심 있다는 뜻이에요.\nENFJ — 상대가 편하게 웃도록 분위기를 다 챙겨줘요.\nENFP — 리액션 부자, 첫 만남을 축제로 만들어요.",
+        "hashtag": "#INFJ #INFP #ENFJ #ENFP #외교관형",
+        "source": "",
+        "handle": "@ucling_dating"
+      },
+      "imageSlots": [
+        { "note": "사진 자리 (510×570). 4분할 카드용 이미지 비움", "empty": true },
+        { "note": "사진 자리 (410×570). 이미지 비움", "empty": true }
+      ],
+      "recolor": {
+        "badgeBg": "#e0356b",
+        "badgeText": "#ffffff",
+        "titleBar": "#e0356b",
+        "title": "#2b1b24",
+        "subTop": "#7a6570",
+        "body": "#2b1b24",
+        "caption": "#7a6570",
+        "bg": "#fff7f9",
+        "imagePlaceholder": "#ffedf2",
+        "accent": "#ff4d85 (🌟인사이트 헤드라인 1곳)"
+      },
+      "overflowFix": "INFP 줄이 34자로 가장 길다. 넘치면 'INFP — 눈 마주치면 설레서 딴 데 보는 것도 관심이에요.'로 축약."
+    },
+    {
+      "n": 4,
+      "template": "T03",
+      "role": "본문 - 관리자형 SJ",
+      "text": {
+        "badge": "관리자형 SJ",
+        "subTop": "ISTJ · ISFJ · ESTJ · ESFJ",
+        "title": "진심을 성실하게 보여주는 사람들",
+        "insight": "🌟 화려하진 않아도, 한번 마음 주면 오래가는 쪽이에요.",
+        "body": "ISTJ — 약속 시간 10분 전 도착, 신뢰가 기본 옵션이에요.\nISFJ — 상대 취향 은근히 다 기억했다가 살뜰히 챙겨요.\nESTJ — 데이트 코스 예약까지 완벽, 리드가 든든해요.\nESFJ — 어색한 공백을 못 참는 다정한 분위기 메이커예요.",
+        "hashtag": "#ISTJ #ISFJ #ESTJ #ESFJ #관리자형",
+        "source": "",
+        "handle": "@ucling_dating"
+      },
+      "imageSlots": [
+        { "note": "사진 자리 (510×570). 4분할 카드용 이미지 비움", "empty": true },
+        { "note": "사진 자리 (410×570). 이미지 비움", "empty": true }
+      ],
+      "recolor": {
+        "badgeBg": "#e0356b",
+        "badgeText": "#ffffff",
+        "titleBar": "#e0356b",
+        "title": "#2b1b24",
+        "subTop": "#7a6570",
+        "body": "#2b1b24",
+        "caption": "#7a6570",
+        "bg": "#fff7f9",
+        "imagePlaceholder": "#ffedf2",
+        "accent": "#ff4d85 (🌟인사이트 헤드라인 1곳)"
+      },
+      "overflowFix": "타이틀 '진심을 성실하게 보여주는 사람들'이 4장 중 가장 길다. 타이틀 바 폭 넘치면 '진심을 성실하게 보여줘요'로 축약. 본문은 여유 있음."
+    },
+    {
+      "n": 5,
+      "template": "T03",
+      "role": "본문 - 탐험가형 SP",
+      "text": {
+        "badge": "탐험가형 SP",
+        "subTop": "ISTP · ISFP · ESTP · ESFP",
+        "title": "지금 이 순간을 즐기는 사람들",
+        "insight": "🌟 계획보다 케미, 만나보면 아는 즐거움이에요.",
+        "body": "ISTP — 말은 아끼지만 필요한 순간 딱 챙겨주는 반전 매력.\nISFP — 조용히 취향이 예쁜 사람, 알아갈수록 빠져요.\nESTP — 첫 만남부터 텐션 최고, 같이 있으면 심심할 틈 없어요.\nESFP — 어디서든 분위기 담당, 함께면 그날이 이벤트가 돼요.",
+        "hashtag": "#ISTP #ISFP #ESTP #ESFP #탐험가형",
+        "source": "",
+        "handle": "@ucling_dating"
+      },
+      "imageSlots": [
+        { "note": "사진 자리 (510×570). 4분할 카드용 이미지 비움", "empty": true },
+        { "note": "사진 자리 (410×570). 이미지 비움", "empty": true }
+      ],
+      "recolor": {
+        "badgeBg": "#e0356b",
+        "badgeText": "#ffffff",
+        "titleBar": "#e0356b",
+        "title": "#2b1b24",
+        "subTop": "#7a6570",
+        "body": "#2b1b24",
+        "caption": "#7a6570",
+        "bg": "#fff7f9",
+        "imagePlaceholder": "#ffedf2",
+        "accent": "#ff4d85 (🌟인사이트 헤드라인 1곳)"
+      },
+      "overflowFix": "ESTP 줄이 32자로 가장 길다. 넘치면 'ESTP — 첫 만남부터 텐션 최고, 같이 있으면 안 심심해요.'로 축약."
+    },
+    {
+      "n": 6,
+      "template": "T06",
+      "role": "CTA/마무리",
+      "text": {
+        "badge": "하루연애",
+        "subTop": "내 소개팅 모드, 오늘 하루 켜볼래요?",
+        "cta": "그래서, 직접 만나봐야 알아요",
+        "body": "MBTI로 상상만 하지 말고,\n원데이 클래스에서 3:3으로 가볍게 만나봐요.\n긴장돼도 괜찮아요, 같이 만들다 보면 자연스러워지거든요.\n내 유형은 저장하고, 같이 갈 친구는 태그해요.",
+        "profile": "@ucling_dating · 우클링 하루연애 1회차 모집 중",
+        "insight": "🌟 신청은 프로필 링크에서.",
+        "hashtag": "#우클링 #하루연애 #소개팅신청 #원데이클래스 #연프감성",
+        "handle": "@ucling_dating"
+      },
+      "imageSlots": [
+        { "note": "CTA 배경 사진 자리 (풀블리드). 우클링 로고·심볼 자리 비움", "empty": true }
+      ],
+      "recolor": {
+        "badgeBg": "#e0356b",
+        "badgeText": "#ffffff",
+        "cta": "#2b1b24",
+        "subTop": "#7a6570",
+        "body": "#2b1b24",
+        "profile": "#7a6570",
+        "caption": "#7a6570",
+        "bg": "#fff7f9",
+        "imagePlaceholder": "#ffedf2",
+        "accent": "#ff4d85 (핵심 CTA '신청은 프로필 링크에서' 1곳)"
+      },
+      "overflowFix": "본문 4줄. 넘치면 3번째 줄 '긴장돼도 괜찮아요, 같이 만들다 보면 자연스러워져요.'로 축약."
+    }
+  ]
+}

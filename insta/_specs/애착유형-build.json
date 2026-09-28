@@ -1,0 +1,238 @@
+{
+  "topic": "애착유형",
+  "sectionName": "우클링 · 애착유형",
+  "fileKey": "FXjqzRZXXDTgGLUnyFdWrS",
+  "frameSize": [1080, 1440],
+  "cardCount": 7,
+  "templateSequence": ["T01", "T02", "T03", "T02", "T03", "T03", "T06"],
+  "notes": [
+    "본문 카드(T02/T03)에는 원본 템플릿에 서브 슬롯이 없어 '서브(따옴표 대사)'를 body 블록의 첫 줄(따옴표 인용)로 배치하도록 sub 필드를 별도로 두고 note에 명시함. 오케스트레이터는 타이틀 바 아래 서브 라인으로 렌더하거나, 여의치 않으면 body 최상단에 인용으로 붙인다.",
+    "핑크(#ff4d85)는 카드당 최대 1곳 규칙 준수 — 유형 카드는 🌟인사이트 강조에, 궁합 카드는 하트(💗)에, CTA 카드는 핵심 버튼에만 사용. 나머지 강조/뱃지/바는 전부 rose(#e0356b).",
+    "이미지 슬롯은 전부 비움(empty:true, blush #ffedf2 채움 + '사진' 라벨). 우클링이 나중에 직접 붙인다.",
+    "궁합 카드는 본문 4줄로 가장 길어 텍스트 여유가 많은 T03(이미지 2칸)에 배치.",
+    "CTA 회차 텍스트는 카피에 없어 비워둠 — 운영자가 현재 회차에 맞게 채운다."
+  ],
+  "cards": [
+    {
+      "n": 1,
+      "template": "T01",
+      "role": "표지",
+      "text": {
+        "badge": "연애 TMI",
+        "subTop": "좋아할수록 나오는 진짜 내 모습",
+        "title": "나도 몰랐던\n내 연애 스타일",
+        "body": "같은 사람을 좋아해도, 사랑하는 방식은 다 달라요.\n누군가는 편안하게, 누군가는 자꾸 불안하게.\n네 가지 애착유형으로 살짝 들여다볼게요.\n→ 넘기면서 내 얘기 같은 거 찾아보기",
+        "hashtags": "#애착유형 #연애스타일 #연애심리 #썸 #우클링하루연애",
+        "source": "우클링",
+        "handle": "@ucling.official"
+      },
+      "imageSlots": [
+        { "note": "표지 대표 일러스트/풀블리드 배경 사진 자리", "empty": true }
+      ],
+      "recolor": {
+        "badgeBg": "#e0356b",
+        "badgeText": "#ffffff",
+        "title": "#2b1b24",
+        "subTop": "#7a6570",
+        "body": "#2b1b24",
+        "caption": "#7a6570",
+        "bg": "#fff7f9",
+        "accent": "none (표지엔 핑크 미사용, 강조는 rose 뱃지)"
+      }
+    },
+    {
+      "n": 2,
+      "template": "T02",
+      "role": "본문 · 안정형",
+      "text": {
+        "badge": "TYPE 01 · 안정형",
+        "title": "사랑에도 여유가 있는 사람",
+        "sub": "\"우리 사이는 웬만하면 괜찮아\"",
+        "body": "• 연락이 좀 늦어도 크게 흔들리지 않아요\n• 서운한 건 담아두지 않고 편하게 말해요\n• 상대의 시간도, 내 시간도 존중해요",
+        "insight": "🌟 있는 그대로도 충분히 사랑스러운 사람. 곁에 있으면 상대까지 안정돼요.",
+        "hashtags": "#안정형 #연애고수 #편안한연애 #애착유형",
+        "source": "우클링",
+        "handle": "@ucling.official"
+      },
+      "imageSlots": [
+        { "note": "안정형 캐릭터/무드 일러스트 자리 (405×328)", "empty": true },
+        { "note": "안정형 서브 무드 자리 (406×242)", "empty": true },
+        { "note": "안정형 메인 무드 자리 (518×578)", "empty": true }
+      ],
+      "recolor": {
+        "badgeBg": "#e0356b",
+        "badgeText": "#ffffff",
+        "titleBar": "#e0356b",
+        "title": "#2b1b24",
+        "sub": "#7a6570",
+        "body": "#2b1b24",
+        "insightAccent": "#ff4d85",
+        "caption": "#7a6570",
+        "bg": "#fff7f9",
+        "sectionBg": "#ffedf2"
+      }
+    },
+    {
+      "n": 3,
+      "template": "T03",
+      "role": "본문 · 불안형",
+      "text": {
+        "badge": "TYPE 02 · 불안형",
+        "title": "더 많이 좋아해서 자꾸 불안한 사람",
+        "sub": "\"혹시 나한테 식은 건 아니겠지?\"",
+        "body": "• 답장 텀이 조금만 길어도 마음이 복잡해져요\n• 상대의 사소한 말투 하나까지 오래 곱씹어요\n• 사랑받는다는 확신이 들 때 제일 행복해요",
+        "insight": "🌟 그만큼 진심으로 좋아하는 사람. 안심시켜 주는 상대를 만나면 활짝 피어나요.",
+        "hashtags": "#불안형 #연애고민 #과몰입 #애착유형",
+        "source": "우클링",
+        "handle": "@ucling.official"
+      },
+      "imageSlots": [
+        { "note": "불안형 메인 무드 일러스트 자리 (510×570)", "empty": true },
+        { "note": "불안형 서브 무드 자리 (410×570)", "empty": true }
+      ],
+      "recolor": {
+        "badgeBg": "#e0356b",
+        "badgeText": "#ffffff",
+        "titleBar": "#e0356b",
+        "title": "#2b1b24",
+        "sub": "#7a6570",
+        "body": "#2b1b24",
+        "insightAccent": "#ff4d85",
+        "caption": "#7a6570",
+        "bg": "#fff7f9",
+        "sectionBg": "#ffedf2"
+      },
+      "overflowFix": "타이틀 '더 많이 좋아해서 자꾸 불안한 사람'이 타이틀 바 1줄을 넘치면 → '더 많이 좋아해서 불안한 사람'으로 축약(의미 유지)."
+    },
+    {
+      "n": 4,
+      "template": "T02",
+      "role": "본문 · 회피형",
+      "text": {
+        "badge": "TYPE 03 · 회피형",
+        "title": "좋아하면서도 거리를 두는 사람",
+        "sub": "\"가까워지면 왜 이렇게 부담될까\"",
+        "body": "• 혼자만의 시간이 꼭 필요해요\n• 감정 표현이 서툴러 무심해 보이기도 해요\n• 너무 훅 들어오면 오히려 한 발 물러서요",
+        "insight": "🌟 마음이 없는 게 아니라, 천천히 여는 사람. 기다려 주면 진짜 모습이 보여요.",
+        "hashtags": "#회피형 #혼자가편해 #밀당아님 #애착유형",
+        "source": "우클링",
+        "handle": "@ucling.official"
+      },
+      "imageSlots": [
+        { "note": "회피형 캐릭터/무드 일러스트 자리 (405×328)", "empty": true },
+        { "note": "회피형 서브 무드 자리 (406×242)", "empty": true },
+        { "note": "회피형 메인 무드 자리 (518×578)", "empty": true }
+      ],
+      "recolor": {
+        "badgeBg": "#e0356b",
+        "badgeText": "#ffffff",
+        "titleBar": "#e0356b",
+        "title": "#2b1b24",
+        "sub": "#7a6570",
+        "body": "#2b1b24",
+        "insightAccent": "#ff4d85",
+        "caption": "#7a6570",
+        "bg": "#fff7f9",
+        "sectionBg": "#ffedf2"
+      }
+    },
+    {
+      "n": 5,
+      "template": "T03",
+      "role": "본문 · 혼란형",
+      "text": {
+        "badge": "TYPE 04 · 혼란형",
+        "title": "다가가고 싶다가도 도망가고 싶은 사람",
+        "sub": "불안형과 회피형이 마음속에 같이 사는 유형",
+        "body": "• 좋아하면서도 \"상처받을까 봐\" 겁이 나요\n• 확 가까워졌다가 갑자기 거리를 두기도 해요\n• 밀당하려는 게 아니라, 마음이 정말 복잡한 거예요",
+        "insight": "🌟 사랑에 서툰 게 아니라 조심스러운 사람. 편안한 상대를 만나면 조금씩 안정돼요.",
+        "hashtags": "#혼란형 #복잡한마음 #연애심리 #애착유형",
+        "source": "우클링",
+        "handle": "@ucling.official"
+      },
+      "imageSlots": [
+        { "note": "혼란형 메인 무드 일러스트 자리 (510×570)", "empty": true },
+        { "note": "혼란형 서브 무드 자리 (410×570)", "empty": true }
+      ],
+      "recolor": {
+        "badgeBg": "#e0356b",
+        "badgeText": "#ffffff",
+        "titleBar": "#e0356b",
+        "title": "#2b1b24",
+        "sub": "#7a6570",
+        "body": "#2b1b24",
+        "insightAccent": "#ff4d85",
+        "caption": "#7a6570",
+        "bg": "#fff7f9",
+        "sectionBg": "#ffedf2"
+      },
+      "overflowFix": "타이틀 '다가가고 싶다가도 도망가고 싶은 사람'이 1줄 초과 시 → 2줄 허용('다가가고 싶다가도\\n도망가고 싶은 사람') 또는 '다가가고 싶다가 도망가고 싶은 사람'으로 축약."
+    },
+    {
+      "n": 6,
+      "template": "T03",
+      "role": "본문 · 궁합",
+      "text": {
+        "badge": "궁합 한눈에",
+        "title": "우린 어떤 유형끼리 잘 맞을까",
+        "sub": "완벽한 정답은 없지만, 참고로 보면 재밌어요",
+        "body": "💗 안정형 × 누구나 — 상대를 편안하게 안아주는 만능 케미\n💗 불안형 × 안정형 — 확신을 주는 상대라 마음이 놓여요\n⚠️ 불안형 × 회피형 — 서로를 가장 애타게 만드는 조합\n💗 회피형 × 안정형 — 재촉 없이 기다려 줘서 천천히 열려요",
+        "insight": "🌟 결국 사랑을 키우는 건 유형보다 노력. 그래도 내 사람이 궁금하다면, 직접 만나봐야 알아요.",
+        "hashtags": "#연애궁합 #애착유형궁합 #연애심리 #우클링하루연애",
+        "source": "우클링",
+        "handle": "@ucling.official"
+      },
+      "imageSlots": [
+        { "note": "유형 매칭 표/하트 라인 그래픽 자리 (510×570)", "empty": true },
+        { "note": "궁합 서브 그래픽 자리 (410×570)", "empty": true }
+      ],
+      "recolor": {
+        "badgeBg": "#e0356b",
+        "badgeText": "#ffffff",
+        "titleBar": "#e0356b",
+        "title": "#2b1b24",
+        "sub": "#7a6570",
+        "body": "#2b1b24",
+        "heartAccent": "#ff4d85",
+        "warnMark": "#7a6570 (⚠️는 회색 톤 유지, 핑크 아님)",
+        "caption": "#7a6570",
+        "bg": "#fff7f9",
+        "sectionBg": "#ffedf2",
+        "accentNote": "이 카드의 핑크(#ff4d85)는 💗 하트 1종에만. 🌟인사이트는 rose(#e0356b) 별표로 처리해 핑크 1곳 규칙 준수."
+      },
+      "overflowFix": "본문 4줄 각각이 콜라주 없이도 길다. T03(이미지 2칸)이라 여유 있으나, 줄바꿈이 생기면 조합명과 설명을 '—' 기준으로 2줄 처리. 더 넘치면 각 줄 설명을 축약: '만능 케미' / '마음이 놓여요' / '가장 애타는 조합' / '천천히 열려요'."
+    },
+    {
+      "n": 7,
+      "template": "T06",
+      "role": "CTA/마무리",
+      "text": {
+        "badge": "하루연애 신청",
+        "subTop": "원데이 클래스에서 만나는 3:3 하루 연프",
+        "title": "내 애착유형,\n실전에서 확인해볼래요?",
+        "cta": "→ 신청은 프로필 링크에서",
+        "body": "유형은 읽는 것보다 만나봐야 알아요.\n같이 향 만들고, 쿠킹하고, 자연스럽게 대화하면서\n내 마음이 어떻게 움직이는지 느껴보세요.\n닉네임만 있으면 신청 끝, 나머진 우리가 매칭할게요.",
+        "profileLine": "@ucling.official · 로컬 클래스로 만나는 하루 연프",
+        "round": "",
+        "hashtags": "#우클링하루연애 #원데이클래스소개팅 #하루연프 #연프감성 #소개팅",
+        "handle": "@ucling.official"
+      },
+      "imageSlots": [
+        { "note": "우클링 심볼/CTA 버튼 목업 · 풀블리드 배경 자리", "empty": true }
+      ],
+      "recolor": {
+        "badgeBg": "#e0356b",
+        "badgeText": "#ffffff",
+        "title": "#2b1b24",
+        "subTop": "#7a6570",
+        "body": "#2b1b24",
+        "ctaButtonBg": "#ff4d85",
+        "ctaButtonText": "#ffffff",
+        "caption": "#7a6570",
+        "bg": "#fff7f9",
+        "accentNote": "이 카드의 핑크(#ff4d85)는 '신청은 프로필 링크에서' 핵심 CTA 버튼 1곳에만. 뱃지는 rose."
+      },
+      "overflowFix": "round 필드는 카피에 회차 정보 없어 비움 — 운영자가 '우클링 하루연애 N회차'로 채운다. 미기입 시 렌더에서 숨김."
+    }
+  ]
+}
