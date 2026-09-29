@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>우클링 하루연애 — 1회차 모집 마감</title>
-  <meta name="description" content="우클링 하루연애 1회차 모집이 마감됐어요. 다음 회차 소식은 우클링 인스타에서 가장 먼저 알려드려요." />
+  <title>우클링 하루연애 — 소개팅은 망해도 머그컵은 남으니까!</title>
+  <meta name="description" content="소개팅은 망해도 머그컵은 남으니까! 동네 원데이 클래스에서 3:3로 자연스럽게 만나는 우클링 하루연애. 지금 신청하세요." />
 
   <!-- 파비콘 (brand/DESIGN-SYSTEM.md §5) -->
   <link rel="icon" href="brand/png/favicon/favicon.ico" sizes="any" />
@@ -12,8 +12,8 @@
   <link rel="apple-touch-icon" href="brand/png/app-icon/app-icon-180.png" />
 
   <!-- OG (인스타/메타 공유용) -->
-  <meta property="og:title" content="우클링 하루연애 — 1회차 모집 마감" />
-  <meta property="og:description" content="다음 회차 소식은 우클링 인스타에서 가장 먼저 알려드려요." />
+  <meta property="og:title" content="우클링 하루연애 — 소개팅은 망해도 머그컵은 남으니까!" />
+  <meta property="og:description" content="동네 원데이 클래스에서 3:3로 자연스럽게. 지금 신청하세요." />
   <meta property="og:image" content="brand/png/profile/profile-512.png" />
   <meta property="og:type" content="website" />
 
@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="styles.css" />
 
   <!-- ===== Meta Pixel ===== -->
+  <!-- 픽셀 ID 를 바꾸면 아래 fbq('init', ...) 값과 <noscript> 의 id= 를 함께 수정 -->
   <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -70,38 +71,260 @@
       <svg class="deco deco--c" width="20" height="20" aria-hidden="true"><use href="#pxstar"/></svg>
 
       <img class="hero__symbol" src="brand/svg/symbol-twotone.svg" alt="우클링" width="44" height="45" />
-      <p class="hero__round">우클링 하루연애 1회차</p>
-      <h1 class="hero__title">1회차 모집이<br />마감됐어요!</h1>
+      <p class="hero__round" id="roundBadge">우클링 하루연애 신청</p>
+      <h1 class="hero__title">소개팅은 망해도<br />머그컵은 남으니까!</h1>
       <p class="hero__sub">
-        많은 신청 정말 고마워요.<br />
-        다음 회차 소식은 인스타에서 가장 먼저 알려드릴게요.
+        연애 프로그램에 나가보고 싶던 마음,<br />
+        동네 원데이 클래스에서 가볍게.
       </p>
-      <a class="btn btn--primary hero__cta" href="https://www.instagram.com/ucling.official/" target="_blank" rel="noopener">우클링 인스타 팔로우하기</a>
-      <p class="hero__note">2회차 모집 오픈 시 DM·게시물로 안내</p>
+      <a class="btn btn--primary hero__cta" href="#apply">신청하러 가기</a>
+      <p class="hero__note">20-30대 · 3:3 매칭 · 오늘 하루의 설렘</p>
     </div>
   </header>
 
   <main>
-    <!-- ===== 마감 안내 카드 ===== -->
-    <section class="apply" aria-labelledby="closedTitle">
+    <!-- ===== 1회차 일정 포스트잇 =====
+         회차가 바뀌면 아래 회차 텍스트와 날짜만 수정한다. -->
+    <section class="schedule" aria-label="이번 회차 일정">
+      <div class="postit">
+        <span class="postit__tape" aria-hidden="true"></span>
+        <p class="postit__label">🗓 우클링 하루연애 1회차 추가모집</p>
+        <ul class="postit__list">
+          <li>
+            <span class="postit__k">신청 마감</span>
+            <span class="postit__v"><strong>선착순 마감</strong></span>
+          </li>
+          <li>
+            <span class="postit__k">매칭 안내</span>
+            <span class="postit__v">신청 즉시 바로 연락</span>
+          </li>
+          <li>
+            <span class="postit__k">클래스 진행</span>
+            <span class="postit__v">10/3~10/4 <small>(토·일)</small></span>
+          </li>
+          <li>
+            <span class="postit__k">장소</span>
+            <span class="postit__v">서울 어딘가 <small>(매칭 시 연락)</small></span>
+          </li>
+          <li>
+            <span class="postit__k">모집</span>
+            <span class="postit__v">남성 추가모집</span>
+          </li>
+        </ul>
+        <p class="postit__note">신청하면 바로 매칭 연락을 드려요</p>
+      </div>
+    </section>
+
+    <!-- ===== 컨셉 / 진행 안내 ===== -->
+    <section class="concept" aria-labelledby="conceptTitle">
+      <h2 id="conceptTitle" class="section-title">이렇게 만나요</h2>
+      <ol class="steps">
+        <li class="step">
+          <span class="step__num">1</span>
+          <div>
+            <h3 class="step__head">신청서를 남겨요</h3>
+            <p class="step__body">닉네임과 취향, 가능한 시간대만. 이름은 받지 않아요.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step__num">2</span>
+          <div>
+            <h3 class="step__head">3:3으로 매칭돼요</h3>
+            <p class="step__body">취향이 맞는 사람들끼리 매칭해드려요.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step__num">3</span>
+          <div>
+            <h3 class="step__head">원데이 클래스에서 만나요</h3>
+            <p class="step__body">향수 만들기, 쿠킹 클래스··· 함께 경험하며 알아가요.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step__num step__num--heart">
+            <!-- 화면 속 pink accent: 사랑의 작대기 하트 -->
+            <svg class="heart" width="22" height="19" aria-hidden="true"><use href="#pxheart"/></svg>
+          </span>
+          <div>
+            <h3 class="step__head">사랑의 작대기</h3>
+            <p class="step__body">끝나고 마음에 든 사람을 지목 → 쌍방이면 연결돼요.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ===== 신청 폼 ===== -->
+    <section class="apply" id="apply" aria-labelledby="applyTitle">
       <div class="win">
         <div class="win__bar">
           <span class="win__dots"><i></i><i></i><i></i></span>
-          <span class="win__title">모집 마감 안내</span>
+          <span class="win__title">소개팅 신청서</span>
+        </div>
+        <div class="win__body">
+          <p class="apply__lead" id="roundLead">지금 모집 중인 회차에 신청해요.</p>
+
+          <form id="applyForm" class="form" novalidate>
+            <!-- 닉네임 -->
+            <div class="field">
+              <label class="label" for="nickname">닉네임 <span class="req">*</span></label>
+              <input class="input" type="text" id="nickname" name="닉네임" maxlength="20" autocomplete="off" required />
+            </div>
+
+            <!-- 나이 -->
+            <div class="field">
+              <label class="label" for="age">나이 (만) <span class="req">*</span></label>
+              <input class="input" type="number" id="age" name="나이" min="18" max="39" inputmode="numeric" required />
+              <p class="hint">매칭에만 쓰고, 상대에게 공개되지 않아요.</p>
+            </div>
+
+            <!-- 성별 (이번 회차는 남성 추가모집) -->
+            <fieldset class="field">
+              <legend class="label">성별 <span class="req">*</span></legend>
+              <p class="hint">이번 회차는 <strong style="color:var(--ucld-text)">남성 추가모집</strong>이에요.</p>
+              <div class="choices choices--row">
+                <label class="chip"><input type="radio" name="성별" value="남" checked required /><span>남</span></label>
+              </div>
+            </fieldset>
+
+            <!-- MBTI -->
+            <div class="field">
+              <label class="label" for="mbti">MBTI <span class="req">*</span></label>
+              <select class="input" id="mbti" name="MBTI" required>
+                <option value="" disabled selected>선택해주세요</option>
+                <option>ISTJ</option><option>ISFJ</option><option>INFJ</option><option>INTJ</option>
+                <option>ISTP</option><option>ISFP</option><option>INFP</option><option>INTP</option>
+                <option>ESTP</option><option>ESFP</option><option>ENFP</option><option>ENTP</option>
+                <option>ESTJ</option><option>ESFJ</option><option>ENFJ</option><option>ENTJ</option>
+                <option value="모름">모르겠어요</option>
+              </select>
+            </div>
+
+            <!-- 관심 클래스 결 -->
+            <fieldset class="field">
+              <legend class="label">관심 클래스 취향 <span class="req">*</span></legend>
+              <p class="hint">복수 선택할 수 있어요.</p>
+              <div class="choices">
+                <label class="opt"><input type="checkbox" name="관심클래스" value="조용히 몰입" /><span>🕯 조용히 몰입 <em>향·캔들·도자기·드로잉·플라워···</em></span></label>
+                <label class="opt"><input type="checkbox" name="관심클래스" value="함께 만들며 수다" /><span>🍳 함께 만들며 수다 <em>쿠킹·베이킹···</em></span></label>
+                <label class="opt"><input type="checkbox" name="관심클래스" value="활발하게 몸으로" /><span>🏸 활발하게 몸으로 <em>배드민턴·클라이밍·볼링···</em></span></label>
+                <label class="opt"><input type="checkbox" name="관심클래스" value="운명에 맡겨요" /><span>🎲 운명에 맡겨요 <em>어떤 결이든 좋아요</em></span></label>
+              </div>
+            </fieldset>
+
+            <!-- 활동 지역 -->
+            <div class="field">
+              <label class="label" for="region">활동 지역 <span class="req">*</span></label>
+              <input class="input" type="text" id="region" name="활동지역" placeholder="예: 서울, 수원, 인천" maxlength="30" required />
+            </div>
+
+            <!-- 참가 금액대 -->
+            <fieldset class="field">
+              <legend class="label">참가 가능 금액대 <span class="req">*</span></legend>
+              <p class="hint">클래스 참가비 기준이에요. 이 범위 안에서 클래스를 골라요.</p>
+              <div class="choices choices--row">
+                <label class="chip"><input type="radio" name="예산" value="3만원까지" /><span>3만원까지</span></label>
+                <label class="chip"><input type="radio" name="예산" value="5만원까지" /><span>5만원까지</span></label>
+                <label class="chip"><input type="radio" name="예산" value="7만원까지" /><span>7만원까지</span></label>
+                <label class="chip"><input type="radio" name="예산" value="상관없음" /><span>상관없음</span></label>
+              </div>
+            </fieldset>
+
+            <!-- 가능한 시간대 -->
+            <fieldset class="field">
+              <legend class="label">가능한 시간대 <span class="req">*</span></legend>
+              <p class="hint">복수 선택할 수 있어요. 아래 일정 중 가능한 때를 모두 골라주세요.</p>
+              <div class="choices choices--row">
+                <label class="chip"><input type="checkbox" name="시간대" value="토(10/3) 16:00" /><span>10/3(토) 16시</span></label>
+                <label class="chip"><input type="checkbox" name="시간대" value="토(10/3) 18:00" /><span>10/3(토) 18시</span></label>
+                <label class="chip"><input type="checkbox" name="시간대" value="일(10/4) 16:00" /><span>10/4(일) 16시</span></label>
+                <label class="chip"><input type="checkbox" name="시간대" value="토(10/3) 저녁 (미정)" /><span>토요일 저녁(미정)</span></label>
+              </div>
+            </fieldset>
+
+            <!-- 내 취향 -->
+            <div class="field">
+              <label class="label" for="myTaste">제 취향은 이래요 <span class="req">*</span></label>
+              <textarea class="input" id="myTaste" name="내취향" rows="3" maxlength="300" placeholder="좋아하는 노래·영화부터 그 밖의 취향까지, 편하게 적어주세요." required></textarea>
+            </div>
+
+            <!-- 원하는 상대 -->
+            <div class="field">
+              <label class="label" for="wish">이런 사람을 만나고 싶어요</label>
+              <textarea class="input" id="wish" name="원하는상대" rows="3" maxlength="300" placeholder="편하게 적어주세요 (선택)"></textarea>
+            </div>
+
+            <!-- 연락처 -->
+            <div class="field">
+              <label class="label" for="contact">연락처 <span class="req">*</span></label>
+              <input class="input" type="tel" id="contact" name="연락처" placeholder="010-0000-0000" inputmode="tel" autocomplete="tel" required />
+              <p class="hint">매칭 안내에만 사용해요.</p>
+            </div>
+
+            <!-- 인스타 -->
+            <div class="field">
+              <label class="label" for="insta">인스타 아이디 <span class="req">*</span></label>
+              <p class="hint" style="margin-top:-5px">아이디를 적어주면 취향이 더 잘 맞는 상대와 매칭될 확률이 올라가요.</p>
+              <input class="input" type="text" id="insta" name="인스타" placeholder="@아이디" maxlength="40" autocomplete="off" required />
+              <p class="hint"><strong style="color:var(--ucld-text)">이 계정으로 연락드려요.</strong> 비공개 계정이면 DM 요청 시 꼭 수락해주세요.</p>
+            </div>
+
+            <!-- 개인정보 동의 -->
+            <div class="consent">
+              <p class="consent__title">[필수] 개인정보 수집·이용 동의</p>
+              <p class="consent__body">
+                우클링 하루연애는 소개팅 매칭 및 참가 안내를 위해 아래와 같이 개인정보를 수집·이용합니다.
+              </p>
+              <ul class="consent__list">
+                <li><b>수집 항목</b> — 닉네임, 나이대, 성별, MBTI, 관심 클래스, 활동 지역, 참가 금액대, 가능한 시간대, 본인 취향, 원하는 상대 유형, 연락처, 인스타 아이디</li>
+                <li><b>수집·이용 목적</b> — 참가자 매칭, 소개팅 진행 안내, 결과(사랑의 작대기) 연결</li>
+                <li><b>보유·이용 기간</b> — 이벤트 종료 후 3개월 내 파기</li>
+                <li>동의를 거부할 수 있으나, 이 경우 매칭 진행이 불가합니다.</li>
+              </ul>
+              <label class="agree">
+                <input type="checkbox" id="agree" name="개인정보동의" value="동의" required />
+                <span>위 내용에 동의합니다. (필수)</span>
+              </label>
+            </div>
+
+            <!-- 후기 참여 동의 -->
+            <div class="consent">
+              <p class="consent__title">[필수] 후기 참여 동의</p>
+              <p class="consent__body">
+                프로그램이 끝난 후, 후기를 받을 구글폼을 인스타 DM으로 보내드려요.
+                작성해주신 후기는 <b>우클링 앱에 실려요.</b>
+              </p>
+              <label class="agree">
+                <input type="checkbox" id="reviewAgree" name="후기동의" value="동의" required />
+                <span>후기 작성에 참여할게요. (필수)</span>
+              </label>
+            </div>
+
+            <!-- 허니팟 -->
+            <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+            <p class="form__error" id="formError" role="alert" hidden></p>
+
+            <button type="submit" class="btn btn--primary btn--full" id="submitBtn">신청하기</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 완료 화면 ===== -->
+    <section class="done" id="done" hidden aria-live="polite">
+      <div class="win">
+        <div class="win__bar">
+          <span class="win__dots"><i></i><i></i><i></i></span>
+          <span class="win__title">접수 완료</span>
         </div>
         <div class="win__body win__body--center">
           <svg class="done__heart heart" width="56" height="48" aria-hidden="true"><use href="#pxheart"/></svg>
-          <h2 id="closedTitle" class="done__title">신청이 마감되었어요</h2>
+          <h2 class="done__title">신청이 접수됐어요</h2>
           <p class="done__body">
-            1회차 신청 접수는 종료됐어요.<br />
-            신청해주신 분들께는 매칭 결과를<br />
-            남겨주신 연락처·인스타 DM으로 안내드릴게요.
+            취향이 맞는 사람과 매칭되면<br />
+            남겨주신 연락처로 안내드릴게요.<br />오늘 하루, 설레는 마음으로 기다려요.
           </p>
-          <p class="done__body" style="margin-top:16px">
-            2회차는 곧 다시 열려요.<br />
-            <strong style="color:var(--ucld-text)">인스타를 팔로우하면</strong> 오픈 소식을 놓치지 않아요.
-          </p>
-          <a class="btn btn--primary" href="https://www.instagram.com/ucling.official/" target="_blank" rel="noopener">우클링 인스타 구경하기</a>
+          <a class="btn btn--primary" href="https://www.instagram.com/ucling.official/" target="_blank" rel="noopener" id="instaCta">우클링 인스타 구경하기</a>
         </div>
       </div>
     </section>
@@ -113,5 +336,7 @@
     <p class="footer__mail"><a href="mailto:ucling.official@gmail.com">ucling.official@gmail.com</a></p>
     <p class="footer__mute">© 우클링 하루연애</p>
   </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
