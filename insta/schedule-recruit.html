@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>우클링 하루연애 — 1회차 추가모집 일정 카드 (Frame 5/6 재생성)</title>
+<!-- 픽셀 폰트: Galmuri (웹사이트와 동일) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/galmuri/dist/galmuri.css" />
+<style>
+  :root {
+    --rose: #e0356b;
+    --rose-deep: #b82a58;
+    --rose-soft: #f591ad;
+    --pink: #ff4d85;
+    --pink-soft: #ff9ec4;
+    --blush: #ffedf2;
+    --blush-deep: #ffdce8;
+    --cream: #fff7f9;
+    --white: #ffffff;
+    --plum: #2b1b24;
+    --plum-mute: #7a6570;
+    --px-line: 6px;
+    --px-shadow: 12px 12px 0 var(--plum);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  ul { list-style: none; }
+  body {
+    background: #d8d8dc;
+    display: flex; flex-wrap: wrap; gap: 40px;
+    padding: 40px; justify-content: center;
+    font-family: "Galmuri11", "Apple SD Gothic Neo", sans-serif;
+  }
+
+  .card {
+    width: 1080px; height: 1350px;
+    position: relative; overflow: hidden;
+    padding: 80px;
+    display: flex; flex-direction: column; justify-content: center;
+    color: var(--plum);
+    image-rendering: pixelated;
+  }
+  .card svg { image-rendering: pixelated; shape-rendering: crispEdges; }
+  .card__logo { position: absolute; top: 60px; right: 64px; height: 40px; width: auto; }
+
+  /* ── 세트 3 · 안내 : 로즈 그라데이션 + 은은한 하트 무늬 ── */
+  .set3 {
+    color: var(--white);
+    background-color: var(--rose-deep);
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150' viewBox='0 0 150 150'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Crect x='58' y='53' width='14' height='7'/%3E%3Crect x='79' y='53' width='14' height='7'/%3E%3Crect x='51' y='60' width='49' height='7'/%3E%3Crect x='51' y='67' width='49' height='7'/%3E%3Crect x='58' y='74' width='35' height='7'/%3E%3Crect x='65' y='81' width='21' height='7'/%3E%3Crect x='72' y='88' width='7' height='7'/%3E%3C/g%3E%3C/svg%3E"),
+      linear-gradient(155deg, #e0356b 0%, #b82a58 100%);
+  }
+
+  /* 제목 (Frame 5/6 과 동일: ♥ 1회차 모집 ♥ / 우클링 하루연애) */
+  .a3-title { text-align: center; margin-bottom: 56px; }
+  .a3-title .lg {
+    display: flex; align-items: center; justify-content: center; gap: 22px;
+    font-family: "Galmuri14", "Galmuri11"; font-weight: 700;
+    font-size: 64px; letter-spacing: .04em;
+    color: var(--white);
+    /* 8방향 하드 외곽선 + 오프셋 그림자 (픽셀 결) */
+    text-shadow:
+      -3px -3px 0 var(--plum), 3px -3px 0 var(--plum), -3px 3px 0 var(--plum), 3px 3px 0 var(--plum),
+      0 -3px 0 var(--plum), 0 3px 0 var(--plum), -3px 0 0 var(--plum), 3px 0 0 var(--plum),
+      8px 8px 0 rgba(43,27,36,.45);
+    margin-bottom: 22px;
+  }
+  .a3-title .lg-heart {
+    color: var(--pink); flex: 0 0 auto;
+    filter:
+      drop-shadow(4px 0 0 var(--plum)) drop-shadow(-4px 0 0 var(--plum))
+      drop-shadow(0 4px 0 var(--plum)) drop-shadow(0 -4px 0 var(--plum))
+      drop-shadow(7px 7px 0 rgba(43,27,36,.4));
+  }
+  .a3-title .big {
+    display: block;
+    font-family: "Galmuri14", "Galmuri11"; font-weight: 700;
+    font-size: 112px; line-height: 1.1; letter-spacing: .02em;
+    color: var(--white);
+    /* 8방향 하드 외곽선(4px) + 뒤쪽 하드 그림자(14px 오프셋) */
+    text-shadow:
+      -4px -4px 0 var(--plum), 4px -4px 0 var(--plum), -4px 4px 0 var(--plum), 4px 4px 0 var(--plum),
+      0 -4px 0 var(--plum), 0 4px 0 var(--plum), -4px 0 0 var(--plum), 4px 0 0 var(--plum),
+      14px 14px 0 rgba(43,27,36,.5);
+  }
+
+  /* 정보 블럭: 흰 배경 + 연핑크 픽셀 그림자 */
+  .info { display: flex; flex-direction: column; gap: 20px; }
+  .info li {
+    display: flex; gap: 24px; align-items: center; font-size: 34px; line-height: 1.35;
+    background: var(--white); color: var(--plum);
+    border: 5px solid var(--plum);
+    box-shadow: 9px 9px 0 var(--pink-soft);
+    padding: 22px 28px;
+  }
+  .info .ico { font-size: 40px; flex: 0 0 auto; }
+  .info .k { font-weight: 700; color: var(--plum-mute); }
+  .info .v { color: var(--plum); }
+
+  /* CTA 픽셀 버튼 */
+  .cta {
+    position: relative; align-self: center;
+    background: var(--white); color: var(--rose);
+    font-family: "Galmuri11"; font-weight: 700; font-size: 40px;
+    padding: 26px 44px;
+    border: var(--px-line) solid var(--plum);
+    box-shadow: 10px 10px 0 var(--rose-deep);
+    margin-top: 48px;
+  }
+</style>
+</head>
+<body>
+
+<!-- 재사용 픽셀 심볼 -->
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="pxheart" viewBox="0 0 7 6">
+    <rect x="1" y="0" width="2" height="1" fill="currentColor"/><rect x="4" y="0" width="2" height="1" fill="currentColor"/>
+    <rect x="0" y="1" width="7" height="1" fill="currentColor"/><rect x="0" y="2" width="7" height="1" fill="currentColor"/>
+    <rect x="1" y="3" width="5" height="1" fill="currentColor"/><rect x="2" y="4" width="3" height="1" fill="currentColor"/>
+    <rect x="3" y="5" width="1" height="1" fill="currentColor"/>
+  </symbol>
+</svg>
+
+<!-- 제목 텍스트(공통) : ♥ 1회차 모집 ♥ / 우클링 하루연애 -->
+
+<!-- 버전 1 : 프로필 링크 안내 O (오가닉 게시물용) → Frame 5 -->
+<section class="card set3" data-name="Frame 5">
+  <img class="card__logo" src="assets/ucling-wordmark-round-white.png" alt="우클링" />
+  <h1 class="a3-title">
+    <span class="lg">
+      <svg class="lg-heart" width="64" height="55" aria-hidden="true"><use href="#pxheart"/></svg>
+      1회차 모집
+      <svg class="lg-heart" width="64" height="55" aria-hidden="true"><use href="#pxheart"/></svg>
+    </span>
+    <span class="big">우클링 하루연애</span>
+  </h1>
+  <ul class="info">
+    <li><span class="ico">📅</span><span><span class="k">신청 마감</span> · <span class="v">선착순 마감</span></span></li>
+    <li><span class="ico">💌</span><span><span class="k">매칭 안내</span> · <span class="v">신청 즉시 바로 연락</span></span></li>
+    <li><span class="ico">🕯</span><span><span class="k">클래스 진행</span> · <span class="v">10/3(토)~10/4(일)</span></span></li>
+    <li><span class="ico">📍</span><span><span class="k">장소</span> · <span class="v">서울 홍대·건대</span></span></li>
+    <li><span class="ico">💸</span><span><span class="k">참가비</span> · <span class="v">35,000원</span></span></li>
+    <li><span class="ico">👥</span><span><span class="k">모집</span> · <span class="v">남성 추가모집</span></span></li>
+  </ul>
+  <span class="cta">신청은 프로필 링크에서</span>
+</section>
+
+<!-- 버전 2 : 프로필 링크 안내 X (광고 CTA 버튼판 — 링크는 광고에서 붙임) → Frame 6 -->
+<section class="card set3" data-name="Frame 6">
+  <img class="card__logo" src="assets/ucling-wordmark-round-white.png" alt="우클링" />
+  <h1 class="a3-title">
+    <span class="lg">
+      <svg class="lg-heart" width="64" height="55" aria-hidden="true"><use href="#pxheart"/></svg>
+      1회차 모집
+      <svg class="lg-heart" width="64" height="55" aria-hidden="true"><use href="#pxheart"/></svg>
+    </span>
+    <span class="big">우클링 하루연애</span>
+  </h1>
+  <ul class="info">
+    <li><span class="ico">📅</span><span><span class="k">신청 마감</span> · <span class="v">선착순 마감</span></span></li>
+    <li><span class="ico">💌</span><span><span class="k">매칭 안내</span> · <span class="v">신청 즉시 바로 연락</span></span></li>
+    <li><span class="ico">🕯</span><span><span class="k">클래스 진행</span> · <span class="v">10/3(토)~10/4(일)</span></span></li>
+    <li><span class="ico">📍</span><span><span class="k">장소</span> · <span class="v">서울 홍대·건대</span></span></li>
+    <li><span class="ico">💸</span><span><span class="k">참가비</span> · <span class="v">35,000원</span></span></li>
+    <li><span class="ico">👥</span><span><span class="k">모집</span> · <span class="v">남성 추가모집</span></span></li>
+  </ul>
+</section>
+
+</body>
+</html>
